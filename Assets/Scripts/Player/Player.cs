@@ -1,12 +1,12 @@
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Animator _playerAnimator;
+
     private float _duration = 0.5f;
     private float _maxDistance = 1.2f;
-    private Animator _playerAnimator;
 
     private bool _isTeleportation;
     private bool _isMoving;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _playerAnimator = GetComponent<Animator>();
+        _playerAnimator.Play(Idle);
     }
 
     private void Update()
@@ -24,21 +24,12 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0) && !_isMoving)
         {
             TryToMove();
-
-            if (_isMoving)
-            {
-                _playerAnimator.Play(Run);
-            }
-            else
-            {
-                _playerAnimator.Play(Idle);
-            }
         }
     }
 
-    public void Teleportation(Vector3 targetPosssition)
+    public void Teleportation(Vector3 targetPosition)
     {
-        targetPosssition.y = -1.2f;
+        targetPosition.y = -1.2f;
 
         if (!_isTeleportation)
         {
@@ -46,7 +37,7 @@ public class Player : MonoBehaviour
 
             transform.DOMoveY(-1.2f, 0.5f).OnComplete(() =>
             {
-                transform.DOMove(targetPosssition, 0f).OnComplete(() =>
+                transform.DOMove(targetPosition, 0f).OnComplete(() =>
                 {
                     transform.DOMoveY(0.30f, 0.5f);
                 });
@@ -66,7 +57,7 @@ public class Player : MonoBehaviour
                 if (distance < _maxDistance)
                 {
                     Move(targetPosition);
-                    _isMoving = false;
+                    transform.rotation = Quaternion.LookRotation(targetPosition - transform.position);
                 }
             }
         }
@@ -74,17 +65,15 @@ public class Player : MonoBehaviour
 
     private void Move(Vector3 targetPosition)
     {
-        _isMoving = true;
-        Vector3 rotate = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
         _playerAnimator.Play(Run);
-        transform.DOMove(targetPosition, _duration);
-        transform.DOLookAt(rotate, 0.1f);
+        _isMoving = true;
+
+        transform.DOMove(targetPosition, _duration).OnComplete(() =>
+        {
+            _playerAnimator.Play(Idle);
+            _isMoving = false;
+        });
 
         _isTeleportation = false;
     }
 }
-
-
-
-
-

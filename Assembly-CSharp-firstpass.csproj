@@ -754,10 +754,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Agava.YandexGames.Samples.Playtesting.csproj">
-      <Project>{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}</Project>
-      <Name>Agava.YandexGames.Samples.Playtesting</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
