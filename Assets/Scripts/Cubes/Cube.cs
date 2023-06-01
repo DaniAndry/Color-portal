@@ -1,18 +1,10 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Cube : MonoBehaviour
+public abstract class Cube : MonoBehaviour
 {
-    [SerializeField] private GameObject _center;
-    [SerializeField] private Cube _targetCube;
+    [SerializeField] protected GameObject ThisCenter;
 
-    public GameObject Center => _center;
+    public GameObject Center => ThisCenter;
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
-        {
-            player.Teleportation(_targetCube.Center.transform.position);
-        }
-    }
 }
