@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2574715892947058463}
   - component: {fileID: 2574715892947058462}
   - component: {fileID: 2574715892947058459}
-  - component: {fileID: 2574715892947058456}
   m_Layer: 0
   m_Name: BlueCube
   m_TagString: Untagged
@@ -116,21 +115,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2574715892947058456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2574715892947058449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e69b50de569ae774a9bdbacbe73809aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _center: {fileID: 2574715894308240205}
-  _targetCube: {fileID: 0}
-  _particle: {fileID: 2574715893944483174}
 --- !u!1 &2574715893597274926
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,11 +369,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6eb9fcc8714f348ba268bf316e7d39, type: 3}
---- !u!198 &2574715893944483174 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19835940, guid: 3f6eb9fcc8714f348ba268bf316e7d39, type: 3}
-  m_PrefabInstance: {fileID: 2574715893962658114}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2574715893962772916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 409846, guid: 3f6eb9fcc8714f348ba268bf316e7d39, type: 3}
