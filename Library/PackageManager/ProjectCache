@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638210489207277768
-    m_Hash: 2167952436
+      ticks: 638212445798029852
+    m_Hash: 3520521516
   m_LockFileStatus:
     m_FilePath: C:/Users/Andrey/Color portal/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638210489223263221
-    m_Hash: 3109544389
+      ticks: 638212445798138078
+    m_Hash: 799073041
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,52 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/Andrey/Color portal/Packages
 m_EditorVersion: 2021.3.14f1 (eee1884e7226)
 m_ResolvedPackages:
+- packageId: com.agava.yandexgames@https://github.com/forcepusher/com.agava.yandexgames.git#13.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 13.0.0
+  source: 5
+  resolvedPath: C:\Users\Andrey\Color portal\Library\PackageCache\com.agava.yandexgames@d1a5a0757d
+  assetPath: Packages/com.agava.yandexgames
+  name: com.agava.yandexgames
+  displayName: Yandex Games
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: library
+  description: Yandex Games Unity SDK for the WebGL platform.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    verified: 
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.17.6
   testable: 0
   isDirectDependency: 1
@@ -234,13 +280,15 @@ m_ResolvedPackages:
     - 3.0.18
     - 3.0.20
     - 3.0.21
+    - 3.0.22
     compatible:
     - 3.0.16
     - 3.0.17
     - 3.0.18
     - 3.0.20
     - 3.0.21
-    verified: 3.0.21
+    - 3.0.22
+    verified: 3.0.22
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6

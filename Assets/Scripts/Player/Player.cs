@@ -1,8 +1,11 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public event UnityAction StepCountChanged;
+
     [SerializeField] private Animator _playerAnimator;
 
     private float _duration = 0.5f;
@@ -23,7 +26,12 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && !_isMoving)
         {
-            TryToMove();
+            TryToMoveForMouse();
+        }
+
+        if (Input.anyKey && !_isMoving)
+        {
+            TryToMoveForKeyboard();
         }
     }
 
@@ -45,7 +53,36 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void TryToMove()
+    private Vector3 GetKeyboardInput()
+    {
+        Vector3 direction = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            direction = Vector3.forward;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            direction = Vector3.back;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            direction = Vector3.left;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            direction = Vector3.right;
+        }
+
+        return direction;
+    }
+
+    private void RotateTowards(Vector3 targetPosition)
+    {
+        transform.rotation = Quaternion.LookRotation(targetPosition - transform.position);
+    }
+
+    private void TryToMoveForMouse()
     {
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100))
         {
@@ -57,7 +94,29 @@ public class Player : MonoBehaviour
                 if (distance < _maxDistance)
                 {
                     Move(targetPosition);
-                    transform.rotation = Quaternion.LookRotation(targetPosition - transform.position);
+                    RotateTowards(targetPosition);
+                }
+            }
+        }
+    }
+
+    private void TryToMoveForKeyboard()
+    {
+        Vector3 direction = GetKeyboardInput();
+
+        if (direction != Vector3.zero)
+        {
+            Vector3 targetPosition = transform.position + direction * _maxDistance;
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, _maxDistance))
+            {
+
+                if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
+                {
+                    targetPosition = cube.Center.transform.position;
+                    Move(targetPosition);
+                    RotateTowards(targetPosition);
                 }
             }
         }
@@ -73,6 +132,8 @@ public class Player : MonoBehaviour
             _playerAnimator.Play(Idle);
             _isMoving = false;
         });
+
+        StepCountChanged?.Invoke();
 
         _isTeleportation = false;
     }

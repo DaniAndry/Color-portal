@@ -1,10 +1,10 @@
-using DG.Tweening;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class FinalCube : Cube
 {
     [SerializeField] private List<ParticleSystem> _particles;
+    [SerializeField] private GameObject _panel;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -16,6 +16,12 @@ public class FinalCube : Cube
             }
 
             Destroy(player.gameObject);
+            Invoke(nameof(OnPanel), 1f);
         }
+    }
+
+    private void OnPanel()
+    {
+        _panel.SetActive(true);
     }
 }
