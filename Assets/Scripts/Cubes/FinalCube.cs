@@ -15,8 +15,8 @@ public class FinalCube : Cube
                 particle.Play();
             }
 
-            Destroy(player.gameObject);
             Invoke(nameof(OnPanel), 1f);
+            Destroy(player.gameObject);
         }
     }
 

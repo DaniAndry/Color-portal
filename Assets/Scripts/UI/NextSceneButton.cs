@@ -6,12 +6,11 @@ public enum SceneName
     Level1,
     Level2,
     Level3,
-    LEvel4
+    Level4
 }
 
 public class NextSceneButton : MonoBehaviour
 {
-
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -27,4 +26,5 @@ public class NextSceneButton : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
 }
