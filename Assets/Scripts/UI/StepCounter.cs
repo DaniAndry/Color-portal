@@ -4,7 +4,7 @@ using TMPro;
 public class StepCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _count;
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerMover _player;
     private Animation _animation;
     private int _stepCount;
 
