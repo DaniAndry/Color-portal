@@ -1,8 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum SceneName
+{
+    Level1,
+    Level2,
+    Level3,
+    LEvel4
+}
+
 public class NextSceneButton : MonoBehaviour
 {
+
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

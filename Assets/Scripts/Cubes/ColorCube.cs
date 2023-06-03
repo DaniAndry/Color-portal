@@ -8,7 +8,7 @@ public class ColorCube : Cube
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.TryGetComponent<PlayerTeleport>(out PlayerTeleport player))
         {
             player.Teleportation(_targetCube.Center.transform.position);
             _particle.Play();
