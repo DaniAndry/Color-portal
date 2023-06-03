@@ -7,6 +7,9 @@ ScriptsOnlyBuild:
     - FinalCube
     - NextSceneButton
     - Player
+    - PlayerAnimations
+    - PlayerMover
+    - PlayerTeleport
     - StepCounter
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
@@ -82,6 +85,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: NextSceneButton
     methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
   sceneClasses:
     Assets/Scenes/Level1.unity:
     - Class: 1
@@ -143,25 +149,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4178}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 4454}
+      Script: {instanceID: 4422}
     - Class: 114
-      Script: {instanceID: 5188}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 4458}
     - Class: 114
-      Script: {instanceID: 5788}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5840}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 5794}
     - Class: 114
-      Script: {instanceID: 50164}
+      Script: {instanceID: 5846}
     - Class: 114
-      Script: {instanceID: 70218}
+      Script: {instanceID: 5950}
+    - Class: 114
+      Script: {instanceID: 6580}
+    - Class: 114
+      Script: {instanceID: 7600}
+    - Class: 114
+      Script: {instanceID: 7642}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,23 +250,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 5188}
+      Script: {instanceID: 4422}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 5788}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5840}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 5794}
     - Class: 114
-      Script: {instanceID: 50164}
+      Script: {instanceID: 5846}
     - Class: 114
-      Script: {instanceID: 70218}
+      Script: {instanceID: 5950}
+    - Class: 114
+      Script: {instanceID: 6580}
+    - Class: 114
+      Script: {instanceID: 7600}
+    - Class: 114
+      Script: {instanceID: 7642}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -331,23 +349,128 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 5188}
+      Script: {instanceID: 4422}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 5788}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5840}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 5794}
     - Class: 114
-      Script: {instanceID: 50164}
+      Script: {instanceID: 5846}
     - Class: 114
-      Script: {instanceID: 70218}
+      Script: {instanceID: 5950}
+    - Class: 114
+      Script: {instanceID: 6580}
+    - Class: 114
+      Script: {instanceID: 7600}
+    - Class: 114
+      Script: {instanceID: 7642}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Level4.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1552}
+    - Class: 114
+      Script: {instanceID: 1558}
+    - Class: 114
+      Script: {instanceID: 1560}
+    - Class: 114
+      Script: {instanceID: 1918}
+    - Class: 114
+      Script: {instanceID: 2634}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 4382}
+    - Class: 114
+      Script: {instanceID: 4422}
+    - Class: 114
+      Script: {instanceID: 4456}
+    - Class: 114
+      Script: {instanceID: 4952}
+    - Class: 114
+      Script: {instanceID: 5194}
+    - Class: 114
+      Script: {instanceID: 5654}
+    - Class: 114
+      Script: {instanceID: 5794}
+    - Class: 114
+      Script: {instanceID: 5846}
+    - Class: 114
+      Script: {instanceID: 5950}
+    - Class: 114
+      Script: {instanceID: 6580}
+    - Class: 114
+      Script: {instanceID: 7600}
+    - Class: 114
+      Script: {instanceID: 7642}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -861,7 +984,19 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 72685710f101395e78ca82549516c058
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NextSceneButton
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMover
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -931,6 +1066,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: EpicToonFX
     className: ETFXLoopScript
+  - hash:
+      serializedVersion: 2
+      Hash: 05beb8588dad4b470c7dfa3beab7def1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerAnimations
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1264,9 +1405,21 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerTeleport
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseOverMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c9763dfdaaef1624a94dd779a3e03088
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StepCounter
   - hash:
       serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
@@ -1321,22 +1474,10 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 763a591776f041109b10ca31b6e909da
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StepCounter
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NextSceneButton
   platform: 20
   scenePathNames:
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level3.unity
-  playerPath: C:/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Playtesting
-    Sample
+  - Assets/Scenes/Level4.unity
+  playerPath: C:/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Builds
