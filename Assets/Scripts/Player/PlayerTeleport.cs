@@ -12,6 +12,7 @@ public class PlayerTeleport : MonoBehaviour
     private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
+        _isTeleportation = true;
     }
 
     public void Teleportation(Vector3 targetPosition)
