@@ -67,6 +67,7 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
+    <Compile Include="Assets\Scripts\UI\FinishScreen.cs" />
     <Compile Include="Assets\Scripts\UI\NextSceneButton.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAudio.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerTeleport.cs" />
     <Compile Include="Assets\Scripts\UI\StepCounter.cs" />
@@ -90,10 +92,12 @@
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Fonts &amp; Materials\Новая папка\COPYRIGHT.txt" />
     <None Include="Assets\BizulkaProduction\Stickman sphere head vol.1 gang\README.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\hidden particle.shader" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\GUI Kit Casual Game\ResourcesData\Shader &amp; Materials\UIAdditive.shader" />
+    <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Fonts &amp; Materials\Новая папка\LICENSE.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -102,6 +106,7 @@
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Fonts &amp; Materials\Новая папка\OFL.txt" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\GUI Kit Casual Game\ResourcesData\Shader &amp; Materials\MobileAdditive.shader" />
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -802,9 +807,21 @@
       <Project>{97C617C0-3A97-7317-8704-D8D6AAB39364}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{E45204B2-0C3C-87B7-E167-D940B5E40329}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="Agava.YandexGames.Samples.Playtesting.csproj">
       <Project>{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}</Project>
       <Name>Agava.YandexGames.Samples.Playtesting</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{0D9CDB25-0230-7C29-310A-C8DBB29E44FD}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanTouch.csproj">
+      <Project>{5E850675-0F71-11DB-01E2-79396E73DF2F}</Project>
+      <Name>LeanTouch</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -66,6 +66,8 @@
     <Compile Include="Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\CW\Third-Party Notices.txt" />
+    <None Include="Assets\Plugins\CW\READ ME.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
@@ -757,9 +759,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{E45204B2-0C3C-87B7-E167-D940B5E40329}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="Agava.YandexGames.Samples.Playtesting.csproj">
       <Project>{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}</Project>
       <Name>Agava.YandexGames.Samples.Playtesting</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{0D9CDB25-0230-7C29-310A-C8DBB29E44FD}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanTouch.csproj">
+      <Project>{5E850675-0F71-11DB-01E2-79396E73DF2F}</Project>
+      <Name>LeanTouch</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

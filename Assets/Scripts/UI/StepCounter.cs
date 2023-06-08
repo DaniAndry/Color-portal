@@ -8,6 +8,8 @@ public class StepCounter : MonoBehaviour
     private Animation _animation;
     private int _stepCount;
 
+    public int StepCount => _stepCount;
+
     private void Start()
     {
         _animation = GetComponent<Animation>();

@@ -1,32 +1,81 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerMover : MonoBehaviour
 {
-    public event UnityAction StepCountChanged;
-    public event UnityAction Moved;
-    public event UnityAction Stoped;
-
     private float _duration = 0.5f;
     private float _minDistance = 0.3f;
     private float _maxDistance = 1.2f;
 
     private bool _isMoving;
+    public event UnityAction StepCountChanged;
+    public event UnityAction Moved;
+    public event UnityAction Stoped;
+
+    private Vector2 _startTouchPosition;
+    private Vector2 _endTouchPosition;
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && !_isMoving)
+        if (Input.GetMouseButtonDown(0) && !_isMoving)
         {
-            TryToMoveForMouse();
+            _startTouchPosition = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButtonUp(0) && !_isMoving)
+        {
+            _endTouchPosition = Input.mousePosition;
+            TryToMoveForSwipe();
         }
 
         if (Input.anyKey && !_isMoving)
         {
             TryToMoveForKeyboard();
         }
+    }
+
+    private void RotateTowards(Vector3 targetPosition)
+    {
+        transform.rotation = Quaternion.LookRotation(targetPosition - transform.position);
+    }
+
+    private void TryToMoveForSwipe()
+    {
+        Vector2 swipeDelta = _endTouchPosition - _startTouchPosition;
+
+        if (swipeDelta.magnitude >= _minDistance)
+        {
+            Vector3 direction = GetSwipeDirection(swipeDelta);
+            Vector3 targetPosition = transform.position + direction * _maxDistance;
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, _maxDistance))
+            {
+                if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
+                {
+                    targetPosition = cube.Center.transform.position;
+                    Move(targetPosition);
+                    RotateTowards(targetPosition);
+                }
+            }
+        }
+    }
+
+    private Vector3 GetSwipeDirection(Vector2 swipeDelta)
+    {
+        Vector3 direction = Vector3.zero;
+
+        if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y))
+        {
+            direction = (swipeDelta.x > 0) ? Vector3.right : Vector3.left;
+        }
+        else
+        {
+            direction = (swipeDelta.y > 0) ? Vector3.forward : Vector3.back;
+        }
+
+        return direction;
     }
 
     private Vector3 GetKeyboardInput()
@@ -53,31 +102,6 @@ public class PlayerMover : MonoBehaviour
         return direction;
     }
 
-    private void RotateTowards(Vector3 targetPosition)
-    {
-        transform.rotation = Quaternion.LookRotation(targetPosition - transform.position);
-    }
-
-    private void TryToMoveForMouse()
-    {
-        int ckickDistance = 100;
-
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, ckickDistance))
-        {
-            if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
-            {
-                Vector3 targetPosition = cube.Center.transform.position;
-                float distance = Vector3.Distance(transform.position, targetPosition);
-
-                if (distance < _maxDistance && distance > _minDistance)
-                {
-                    Move(targetPosition);
-                    RotateTowards(targetPosition);
-                }
-            }
-        }
-    }
-
     private void TryToMoveForKeyboard()
     {
         Vector3 direction = GetKeyboardInput();
@@ -89,7 +113,6 @@ public class PlayerMover : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, direction, out hit, _maxDistance))
             {
-
                 if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
                 {
                     targetPosition = cube.Center.transform.position;
@@ -119,5 +142,4 @@ public class PlayerMover : MonoBehaviour
         StepCountChanged?.Invoke();
         Moved?.Invoke();
     }
-
 }
