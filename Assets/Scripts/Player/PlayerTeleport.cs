@@ -1,10 +1,13 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerTeleport : MonoBehaviour
 {
     private bool _isTeleportation;
     private PlayerMover _playerMover;
+
+    public event UnityAction Teleported;
 
     private void Awake()
     {
@@ -13,19 +16,20 @@ public class PlayerTeleport : MonoBehaviour
 
     public void Teleportation(Vector3 targetPosition)
     {
-        float duration = 0.5f;   
+        float duration = 0.5f;
         float needPossitionY = 0.30f;
         targetPosition.y = -1.2f;
 
         if (!_isTeleportation)
         {
             transform.DOMoveY(targetPosition.y, duration).OnComplete(() =>
-           {
-               transform.DOMove(targetPosition, 0f).OnComplete(() =>
-               {
-                   transform.DOMoveY(needPossitionY, duration);
-               });
-           });
+{
+    transform.DOMove(targetPosition, 0f).OnComplete(() =>
+    {
+        transform.DOMoveY(needPossitionY, duration);
+        Teleported?.Invoke();
+    });
+});
         }
     }
 

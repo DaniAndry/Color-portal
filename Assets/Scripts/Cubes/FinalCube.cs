@@ -1,26 +1,47 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class FinalCube : Cube
 {
     [SerializeField] private List<ParticleSystem> _particles;
     [SerializeField] private GameObject _panel;
 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _applause;
+    [SerializeField] private AudioClip _win;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.TryGetComponent<Player>(out Player player))
         {
+            StartCoroutine(PlayWinAudio());
             foreach (ParticleSystem particle in _particles)
             {
                 particle.Play();
             }
 
-            Invoke(nameof(OnPanel), 1f);
+            Invoke(nameof(ActivatePanel), 1f);
             Destroy(player.gameObject);
         }
     }
 
-    private void OnPanel()
+    private IEnumerator PlayWinAudio()
+    {
+        _audioSource.clip = _win;
+        _audioSource.Play();
+
+        while (_audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        _audioSource.clip = _applause;
+        _audioSource.Play();
+    }
+
+    private void ActivatePanel()
     {
         _panel.SetActive(true);
     }

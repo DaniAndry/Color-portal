@@ -27,4 +27,10 @@ public class NextSceneButton : MonoBehaviour
         }
     }
 
+    public void ReloadScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 }
