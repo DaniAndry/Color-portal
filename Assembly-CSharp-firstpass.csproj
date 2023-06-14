@@ -771,6 +771,18 @@
       <Project>{0D9CDB25-0230-7C29-310A-C8DBB29E44FD}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{42475A3C-1165-D861-29D9-7BE105FFD5EC}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{0264FDAF-27D1-73D2-DB6C-111AA0C0DB8A}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{48A5C4FF-781A-CD6B-0A56-CB7E0BEDA661}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanTouch.csproj">
       <Project>{5E850675-0F71-11DB-01E2-79396E73DF2F}</Project>
       <Name>LeanTouch</Name>
