@@ -1,14 +1,37 @@
+using TMPro;
 using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    private static int _count;
-
+    [SerializeField] private TextMeshProUGUI _textCount;
+    private int _count;
+    private int _levels = 13;
     public int Count => _count;
 
-
-    public void AddPoints(int count)
+    private void Awake()
     {
-        _count += count;
+       // ClearState();
+        Calculate();
+    }
+
+    public int Calculate()
+    {
+        _count = 0;
+
+        for (int i = 0; i < _levels; i++)
+        {
+            _count += PlayerPrefs.GetInt("PointsLevel" + i, 0);
+        }
+
+        _textCount.text = _count.ToString();
+        return _count;
+    }
+
+    public void ClearState()
+    {
+        for (int i = 0; i < _levels; i++)
+        {
+            PlayerPrefs.SetInt("PointsLevel" + i, 0);
+        }
     }
 }

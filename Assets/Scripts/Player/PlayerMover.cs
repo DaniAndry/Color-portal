@@ -43,13 +43,15 @@ public class PlayerMover : MonoBehaviour
     private void TryToMoveForSwipe()
     {
         Vector2 swipeDelta = _endTouchPosition - _startTouchPosition;
+        float minSwipeDistance = 120f;
 
-        if (swipeDelta.magnitude >= _minDistance)
+        if (swipeDelta.magnitude >= minSwipeDistance)
         {
             Vector3 direction = GetSwipeDirection(swipeDelta);
             Vector3 targetPosition = transform.position + direction * _maxDistance;
 
             RaycastHit hit;
+
             if (Physics.Raycast(transform.position, direction, out hit, _maxDistance))
             {
                 if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))

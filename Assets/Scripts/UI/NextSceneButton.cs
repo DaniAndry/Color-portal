@@ -1,36 +1,51 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum SceneName
-{
-    Level1,
-    Level2,
-    Level3,
-    Level4
-}
-
 public class NextSceneButton : MonoBehaviour
 {
+    [SerializeField] private NeedPoints _needPoints;
+    [SerializeField] private Points _points;
+    [SerializeField] private GameObject _notEnoughPoint;
+
+    private int _currentSceneIndex;
+
+    private void Start()
+    {
+        _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _points.Calculate();
+    }
+
     public void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _notEnoughPoint.SetActive(false);
 
-        int nextSceneIndex = currentSceneIndex + 1;
+        int nextSceneIndex = _currentSceneIndex + 1;
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings&& IsPointsEnough())
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
         else
         {
-            SceneManager.LoadScene(0);
+            _notEnoughPoint.SetActive(true);
         }
     }
 
     public void ReloadScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(_currentSceneIndex);
+    }
 
-        SceneManager.LoadScene(currentSceneIndex);
+    private bool IsPointsEnough()
+    {
+        if (_needPoints.TryToEnter(_currentSceneIndex-1, _points.Calculate()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
+
