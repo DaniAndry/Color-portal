@@ -1,16 +1,18 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FinishScreen : MonoBehaviour
 {
     [SerializeField] private StepCounter _stepCounter;
     [SerializeField] private TextMeshProUGUI _string;
-    [SerializeField] private Points _points;
+    [SerializeField] private Image[] _stars;
 
     private int _currentPointsCount;
     private int _maxPointsCount = 3;
-    private int _needStepCount;
+    private int _needStepCount = 8;
+    private string _pointsLevelName;
     private string[] winStrings = new string[]  {
         "Мега круто!",
         "Супер молодец!",
@@ -42,12 +44,16 @@ public class FinishScreen : MonoBehaviour
    "Ты на верном пути",
     };
 
-
     private void OnEnable()
     {
-        _needStepCount = 8;
         SelectString();
         SendStepCountEvent();
+    }
+
+    private void Awake()
+    {
+        _pointsLevelName = "PointsLevel" + SceneManager.GetActiveScene().buildIndex;
+        _currentPointsCount = PlayerPrefs.GetInt(_pointsLevelName);
     }
 
     private void SelectString()
@@ -83,14 +89,26 @@ public class FinishScreen : MonoBehaviour
                 break;
         }
 
-        if (_currentPointsCount != _maxPointsCount)
+        if (_currentPointsCount < _maxPointsCount)
         {
             if (value > 0 && value > _currentPointsCount)
             {
-                int points = value - _currentPointsCount;
                 _currentPointsCount = value;
-                _points.AddPoints(points);
+                DisplayStars(_currentPointsCount);
+                PlayerPrefs.SetInt(_pointsLevelName, _currentPointsCount);
             }
+        }
+        else
+        {
+            DisplayStars(_currentPointsCount);
+        }
+    }
+
+    private void DisplayStars(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            _stars[i].color = new Color(255, 255, 255);
         }
     }
 }

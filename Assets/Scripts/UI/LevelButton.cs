@@ -11,6 +11,8 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private AudioClip _blockedClickSound;
     [SerializeField] private bool _isBlocked;
 
+    public int LeveNumber => _levelNumber;
+
     public void OnClick()
     {
         if (_isBlocked)
