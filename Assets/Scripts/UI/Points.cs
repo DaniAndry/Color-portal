@@ -10,7 +10,6 @@ public class Points : MonoBehaviour
 
     private void Awake()
     {
-       // ClearState();
         Calculate();
     }
 
