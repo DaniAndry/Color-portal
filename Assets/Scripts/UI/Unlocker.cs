@@ -14,8 +14,6 @@ public class Unlocker : MonoBehaviour
             {
                 levelUnlockers[i].StartToUnlock(_points.Calculate());
             }
-
-            Debug.Log("Level " + i + " is unlocked");
         }
     }
 }

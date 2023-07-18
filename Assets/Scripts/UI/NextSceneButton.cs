@@ -38,7 +38,7 @@ public class NextSceneButton : MonoBehaviour
 
     private bool IsPointsEnough()
     {
-        if (_needPoints.TryToEnter(_currentSceneIndex-1, _points.Calculate()))
+        if (_needPoints.TryToEnter(_currentSceneIndex-2, _points.Calculate()))
         {
             return true;
         }

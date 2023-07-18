@@ -1,7 +1,8 @@
-using TMPro;
+п»їusing TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Agava.YandexGames;
 
 public class FinishScreen : MonoBehaviour
 {
@@ -12,41 +13,111 @@ public class FinishScreen : MonoBehaviour
     private int _currentPointsCount;
     private int _maxPointsCount = 3;
     private int _needStepCount = 8;
+
     private string _pointsLevelName;
-    private string[] winStrings = new string[]  {
-        "Мега круто!",
-        "Супер молодец!",
-        "Великолепно!",
-        "Просто бомба!",
-        "Гений уровня!",
-        "Ты умница!",
-        "Просто огонь !",
-        "Шик и блеск!",
-        "Мастер!",
-        "Просто божественно!",
-        "Ты прелесть!",
-        "Невероятно талантливо!",
-        "Безупречно!",
-        "Фантастическое достижение!",
-        "Ты Суперзвезда!",
-        "Грандиозный успех!",
-        "Настоящий ас!",
-        "Мастер своего дела!",
-        "Просто невероятно!"
+    private string _currentLanguage;
+
+    private string[] _currentWinStrigs;
+    private string[] _currentLoseStrigs;
+    private string[] _winStringsRussian = new string[] {
+        "РњРµРіР° РєСЂСѓС‚Рѕ!",
+        "РЎСѓРїРµСЂ РјРѕР»РѕРґРµС†!",
+        "Р’РµР»РёРєРѕР»РµРїРЅРѕ!",
+        "РџСЂРѕСЃС‚Рѕ Р±РѕРјР±Р°!",
+        "Р“РµРЅРёР№ СѓСЂРѕРІРЅСЏ!",
+        "РўС‹ СѓРјРЅРёС†Р°!",
+        "РџСЂРѕСЃС‚Рѕ РѕРіРѕРЅСЊ !",
+        "РЁРёРє Рё Р±Р»РµСЃРє!",
+        "РњР°СЃС‚РµСЂ!",
+        "РџСЂРѕСЃС‚Рѕ Р±РѕР¶РµСЃС‚РІРµРЅРЅРѕ!",
+        "РўС‹ РїСЂРµР»РµСЃС‚СЊ!",
+        "РќРµРІРµСЂРѕСЏС‚РЅРѕ С‚Р°Р»Р°РЅС‚Р»РёРІРѕ!",
+        "Р‘РµР·СѓРїСЂРµС‡РЅРѕ!",
+        "Р¤Р°РЅС‚Р°СЃС‚РёС‡РµСЃРєРѕРµ РґРѕСЃС‚РёР¶РµРЅРёРµ!",
+        "РўС‹ РЎСѓРїРµСЂР·РІРµР·РґР°!",
+        "Р“СЂР°РЅРґРёРѕР·РЅС‹Р№ СѓСЃРїРµС…!",
+        "РќР°СЃС‚РѕСЏС‰РёР№ Р°СЃ!",
+        "РњР°СЃС‚РµСЂ СЃРІРѕРµРіРѕ РґРµР»Р°!",
+        "РџСЂРѕСЃС‚Рѕ РЅРµРІРµСЂРѕСЏС‚РЅРѕ!"
     };
-    private string[] loseStrings = new string[]    {
-        "Можно чуть получше!",
-   "Ты можешь лучше!",
-   "Неплохо, но можно лучше!",
-   "Ещё немного и огонь!",
-   "Почти идеально",
-   "Близко к совершенству!",
-   "Ты на верном пути",
+
+    private string[] _loseStringsRussian = new string[] {
+        "РњРѕР¶РЅРѕ С‡СѓС‚СЊ РїРѕР»СѓС‡С€Рµ!",
+        "РўС‹ РјРѕР¶РµС€СЊ Р»СѓС‡С€Рµ!",
+        "РќРµРїР»РѕС…Рѕ, РЅРѕ РјРѕР¶РЅРѕ Р»СѓС‡С€Рµ!",
+        "Р•С‰С‘ РЅРµРјРЅРѕРіРѕ Рё РѕРіРѕРЅСЊ!",
+        "РџРѕС‡С‚Рё РёРґРµР°Р»СЊРЅРѕ",
+        "Р‘Р»РёР·РєРѕ Рє СЃРѕРІРµСЂС€РµРЅСЃС‚РІСѓ!",
+        "РўС‹ РЅР° РІРµСЂРЅРѕРј РїСѓС‚Рё",
     };
+
+    private string[] _winStringsEnglish = new string[] {
+        "Awesome!",
+        "Well done!",
+        "Great job!",
+        "Simply fantastic!",
+        "Genius level!",
+        "You're brilliant!",
+        "Just amazing!",
+        "Chic and glamorous!",
+        "Masterful!",
+        "Simply divine!",
+        "You're lovely!",
+        "Incredibly talented!",
+        "Flawless!",
+        "Fantastic achievement!",
+        "You're a superstar!",
+        "Spectacular success!",
+        "A true ace!",
+        "Master of your craft!",
+        "Simply incredible!"
+    };
+
+    private string[] _loseStringsEnglish = new string[] {
+        "You can do better!",
+        "You have the potential!",
+        "Not bad, but you can improve!",
+        "Just a little more and you'll shine!",
+        "Almost perfect",
+        "Close to perfection!",
+        "You're on the right track",
+    };
+
+    private string[] _winStringsTurkish = new string[] {
+    "Harika bir iЕџ!",
+    "Bravo!",
+    "Harika bir iЕџ Г§Д±kardД±nД±z!",
+    "Sadece fantastik!",
+    "Dahi seviyesindesiniz!",
+    "MuhteЕџemsin!",
+    "Sadece inanД±lmaz!",
+    "ЕћД±k ve gГ¶z alД±cД±!",
+    "UstasД±n!",
+    "Sadece mГјkemmel!",
+    "HarikasД±n!",
+    "Д°nanД±lmaz yeteneklisin!",
+    "Kusursuz!",
+    "Fantastik bir baЕџarД±!",
+    "SГјpersiniz!",
+    "MuhteЕџem bir baЕџarД±!",
+    "GerГ§ek bir as!",
+    "UstalД±ДџД±nД±zla mГјkemmelsiniz!",
+    "Sadece inanД±lmaz!"
+};
+
+    private string[] _loseStringsTurkish = new string[] {
+    "Daha iyi yapabilirsiniz!",
+    "Potansiyeliniz var!",
+    "KГ¶tГј deДџil, ama daha iyi olabilirsiniz!",
+    "Biraz daha ve parlayacaksД±nД±z!",
+    "Neredeyse mГјkemmel",
+    "MГјkemmelliДџe yakД±nsД±nД±z!",
+    "DoДџru yoldasД±nД±z",
+};
+
 
     private void OnEnable()
     {
-        SelectString();
         SendStepCountEvent();
     }
 
@@ -55,16 +126,44 @@ public class FinishScreen : MonoBehaviour
         _pointsLevelName = "PointsLevel" + SceneManager.GetActiveScene().buildIndex;
         _currentPointsCount = PlayerPrefs.GetInt(_pointsLevelName);
     }
+    private void Start()
+    {
+        _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
+        LoadLocalization();
+        SelectString();
+
+    }
+
+    private void LoadLocalization()
+    {
+        if (_currentLanguage == "ru")
+        {
+            _currentWinStrigs = _winStringsRussian;
+            _currentLoseStrigs = _loseStringsRussian;
+        }
+        if (_currentLanguage == "en")
+        {
+            _currentWinStrigs = _winStringsEnglish;
+            _currentLoseStrigs = _loseStringsEnglish;
+        }
+        if (_currentLanguage == "tr")
+        {
+            _currentWinStrigs = _winStringsTurkish;
+            _currentLoseStrigs = _loseStringsTurkish;
+        }
+    }
 
     private void SelectString()
     {
         if (_stepCounter.StepCount <= _needStepCount)
         {
-            _string.text = winStrings[Random.Range(0, winStrings.Length)];
+            int index = Random.Range(0, _currentWinStrigs.Length);
+            _string.text = _currentWinStrigs[index];
         }
         else
         {
-            _string.text = loseStrings[Random.Range(0, loseStrings.Length)];
+            int index = Random.Range(0, _currentLoseStrigs.Length);
+            _string.text = _currentLoseStrigs[index];
         }
     }
 

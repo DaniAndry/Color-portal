@@ -694,8 +694,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -757,6 +763,9 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
@@ -771,13 +780,13 @@
       <Project>{42475A3C-1165-D861-29D9-7BE105FFD5EC}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="LeanLocalizationEditor.csproj">
-      <Project>{05508777-2A64-A972-33AE-CB38D19F36F9}</Project>
-      <Name>LeanLocalizationEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
       <Project>{0264FDAF-27D1-73D2-DB6C-111AA0C0DB8A}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalizationEditor.csproj">
+      <Project>{05508777-2A64-A972-33AE-CB38D19F36F9}</Project>
+      <Name>LeanLocalizationEditor</Name>
     </ProjectReference>
     <ProjectReference Include="LeanLocalization.csproj">
       <Project>{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}</Project>

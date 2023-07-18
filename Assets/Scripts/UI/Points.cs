@@ -25,12 +25,4 @@ public class Points : MonoBehaviour
         _textCount.text = _count.ToString();
         return _count;
     }
-
-    public void ClearState()
-    {
-        for (int i = 0; i < _levels; i++)
-        {
-            PlayerPrefs.SetInt("PointsLevel" + i, 0);
-        }
-    }
 }

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638236257102818053
-    m_Hash: 4259585737
+      ticks: 638240584913691905
+    m_Hash: 582634827
   m_LockFileStatus:
     m_FilePath: C:/Users/Andrey/Color portal/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638236257102897019
-    m_Hash: 1781682259
+      ticks: 638240584913791911
+    m_Hash: 2036704040
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -527,7 +527,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.timeline
-    version: 1.6.4
+    version: 1.6.5
   - name: com.unity.modules.director
     version: 1.0.0
   - name: com.unity.modules.audio
@@ -857,12 +857,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.6
     nextVersion: 
-- packageId: com.unity.timeline@1.6.4
+- packageId: com.unity.timeline@1.6.5
   testable: 0
   isDirectDependency: 1
-  version: 1.6.4
+  version: 1.6.5
   source: 1
-  resolvedPath: C:\Users\Andrey\Color portal\Library\PackageCache\com.unity.timeline@1.6.4
+  resolvedPath: C:\Users\Andrey\Color portal\Library\PackageCache\com.unity.timeline@1.6.5
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1011,13 +1011,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637789039180000000
-  documentationUrl: 
+  datePublishedTicks: 638182037450000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: d7e1eb6805737974459309b7d6e7db58635dd167
+    revision: 4ed67a7e62ce940db3d44dc5eca8fade1c664aed
     path: 
   unityLifecycle:
     version: 1.6.4
@@ -2977,11 +2977,13 @@ m_ResolvedPackages:
     - 2.0.2
     - 2.0.3
     - 2.0.4
+    - 2.0.5
     compatible:
     - 1.0.6
     - 2.0.2
     - 2.0.3
     - 2.0.4
+    - 2.0.5
     verified: 1.0.6
   dependencies: []
   resolvedDependencies: []
