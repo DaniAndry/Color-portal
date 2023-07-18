@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
+    <Compile Include="Assets\Scripts\UI\StartWindow.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
     <Compile Include="Assets\Scripts\Cubes\ColorCube.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
@@ -64,13 +65,20 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
+    <Compile Include="Assets\Scripts\UI\Localization.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
+    <Compile Include="Assets\Scripts\Settings\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI\StarsInMenu.cs" />
+    <Compile Include="Assets\HONETi\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Scripts\UI\FinishScreen.cs" />
     <Compile Include="Assets\Scripts\UI\NextSceneButton.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\InitializingSDK.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Settings\SondButton.cs" />
     <Compile Include="Assets\Scripts\UI\NeedPoints.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
@@ -78,22 +86,22 @@
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
     <Compile Include="Assets\Scripts\UI\Points.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\PanelControl.cs" />
-    <Compile Include="Assets\MenuButton.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuButton.cs" />
     <Compile Include="Assets\Scripts\UI\LevelUnlocker.cs" />
     <Compile Include="Assets\Scripts\Cubes\FinalCube.cs" />
     <Compile Include="Assets\Scripts\Cubes\EmptyCube.cs" />
     <Compile Include="Assets\Scripts\UI\Unlocker.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Education.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\UI\StartLocalization.cs" />
     <Compile Include="Assets\Scripts\UI\LevelButton.cs" />
-    <Compile Include="Assets\Scripts\UI\Stars.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAudio.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerTeleport.cs" />
     <Compile Include="Assets\Scripts\UI\StepCounter.cs" />
     <Compile Include="Assets\Scripts\Settings\SoundSettings.cs" />
-    <Compile Include="Assets\Scripts\Settings\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -749,8 +757,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -812,6 +826,9 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
@@ -830,13 +847,13 @@
       <Project>{42475A3C-1165-D861-29D9-7BE105FFD5EC}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="LeanLocalizationEditor.csproj">
-      <Project>{05508777-2A64-A972-33AE-CB38D19F36F9}</Project>
-      <Name>LeanLocalizationEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
       <Project>{0264FDAF-27D1-73D2-DB6C-111AA0C0DB8A}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanLocalizationEditor.csproj">
+      <Project>{05508777-2A64-A972-33AE-CB38D19F36F9}</Project>
+      <Name>LeanLocalizationEditor</Name>
     </ProjectReference>
     <ProjectReference Include="LeanLocalization.csproj">
       <Project>{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}</Project>

@@ -21,8 +21,6 @@ public class SoundSettings : MonoBehaviour
         _music.volume = PlayerPrefs.GetFloat("MusicVolume");
         _sound.volume = PlayerPrefs.GetFloat("SoundVolume");
         _finish.volume = PlayerPrefs.GetFloat("SoundVolume");
-        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
-        Debug.Log(PlayerPrefs.GetFloat("SoundVolume"));
         _isMusic = PlayerPrefs.GetFloat("MusicVolume") > 0;
         _isSound = PlayerPrefs.GetFloat("SoundVolume") > 0;
 
@@ -51,7 +49,6 @@ public class SoundSettings : MonoBehaviour
     {
         if (!_isSound)
         {
-            PlayerPrefs.SetFloat("SoundVolume", 100);
             PlayerPrefs.SetFloat("SoundVolume", 100);
             _sound.volume = PlayerPrefs.GetFloat("SoundVolume");
             _finish.volume = PlayerPrefs.GetFloat("SoundVolume");

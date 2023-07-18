@@ -8,7 +8,14 @@ public class NeedPoints : MonoBehaviour
 
         for (int i = 0; i < numberLevel; i++)
         {
-            needpoints += 2;
+            if (numberLevel < 4)
+            {
+                needpoints += 3;
+            }
+            else
+            {
+                needpoints += 2;
+            }
         }
 
         if (countPoints >= needpoints)
