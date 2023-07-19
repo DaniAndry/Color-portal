@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class PlayerMover : MonoBehaviour
 {
     private float _duration = 0.5f;
-    private float _minDistance = 0.3f;
     private float _maxDistance = 1.2f;
 
     private bool _isMoving;
@@ -43,7 +42,7 @@ public class PlayerMover : MonoBehaviour
     private void TryToMoveForSwipe()
     {
         Vector2 swipeDelta = _endTouchPosition - _startTouchPosition;
-        float minSwipeDistance = 120f;
+        float minSwipeDistance = 150f;
 
         if (swipeDelta.magnitude >= minSwipeDistance)
         {
