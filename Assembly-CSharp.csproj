@@ -65,7 +65,7 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
-    <Compile Include="Assets\Scripts\UI\Localization.cs" />
+    <Compile Include="Assets\Scripts\Localization\Localization.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Settings\Menu.cs" />
@@ -76,7 +76,7 @@
     <Compile Include="Assets\Scripts\UI\NextSceneButton.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\InitializingSDK.cs" />
+    <Compile Include="Assets\Scripts\YandexSDK\InitializingSDK.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Settings\SondButton.cs" />
     <Compile Include="Assets\Scripts\UI\NeedPoints.cs" />
@@ -95,13 +95,17 @@
     <Compile Include="Assets\Scripts\UI\Education.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Extensions\UIParticle\UIParticleSystem.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\UI\StartLocalization.cs" />
+    <Compile Include="Assets\Scripts\Localization\StartLocalization.cs" />
     <Compile Include="Assets\Scripts\UI\LevelButton.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAudio.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerTeleport.cs" />
     <Compile Include="Assets\Scripts\UI\StepCounter.cs" />
     <Compile Include="Assets\Scripts\Settings\SoundSettings.cs" />
+    <Compile Include="Assets\Scripts\Liderboard\LeaderboardLoader.cs" />
+    <Compile Include="Assets\Scripts\Liderboard\PlayerScore.cs" />
+    <Compile Include="Assets\Scripts\Liderboard\Score.cs" />
+    <Compile Include="Assets\Scripts\Liderboard\LeaderboardOpener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

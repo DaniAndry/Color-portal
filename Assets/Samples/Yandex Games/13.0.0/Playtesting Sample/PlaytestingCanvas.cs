@@ -54,8 +54,10 @@ namespace Agava.YandexGames.Samples
 
         public void OnShowVideoButtonClick()
         {
-            VideoAd.Show();
+            VideoAd.Show(OnShowStickyAdButtonClick, OnHideStickyAdButtonClick);
+            
         }
+
 
         public void OnShowStickyAdButtonClick()
         {
