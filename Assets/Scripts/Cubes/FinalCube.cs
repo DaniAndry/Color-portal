@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class FinalCube : Cube
 {
+    public event UnityAction Finished;
+
     [SerializeField] private List<ParticleSystem> _particles;
     [SerializeField] private GameObject _panel;
 
@@ -44,5 +47,6 @@ public class FinalCube : Cube
     private void ActivatePanel()
     {
         _panel.SetActive(true);
+        Finished?.Invoke();
     }
 }

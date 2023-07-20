@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class NextSceneButton : MonoBehaviour
 {
     [SerializeField] private NeedPoints _needPoints;
-    [SerializeField] private Points _points;
+    [SerializeField] private Stars _points;
     [SerializeField] private GameObject _notEnoughPoint;
 
     private int _currentSceneIndex;

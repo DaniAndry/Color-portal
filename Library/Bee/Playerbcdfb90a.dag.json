@@ -16449,13 +16449,13 @@
       "DebugActionIndex": 422
     },
     {
-      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/897c7ff1ffd7223fd68a1fb85dd71790.js.unityweb",
-      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/897c7ff1ffd7223fd68a1fb85dd71790.js.unityweb\" -i \"Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.framework.js\" --comment \"UnityWeb Compressed Content (brotli)\"",
+      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/d8abeede8750d86d8d848e6cf29cd816.js.unityweb",
+      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/d8abeede8750d86d8d848e6cf29cd816.js.unityweb\" -i \"Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.framework.js\" --comment \"UnityWeb Compressed Content (brotli)\"",
       "Inputs": [
         "Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.framework.js"
       ],
       "Outputs": [
-        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/897c7ff1ffd7223fd68a1fb85dd71790.js.unityweb"
+        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/d8abeede8750d86d8d848e6cf29cd816.js.unityweb"
       ],
       "ToBuildDependencies": [
         422
@@ -16465,13 +16465,13 @@
       "DebugActionIndex": 423
     },
     {
-      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/c1d2280bf10cffa514cf6328f0bb2516.wasm.unityweb",
-      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/c1d2280bf10cffa514cf6328f0bb2516.wasm.unityweb\" -i \"Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.wasm\" --comment \"UnityWeb Compressed Content (brotli)\"",
+      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/6d2339ea57c41619a005587af01174ad.wasm.unityweb",
+      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/6d2339ea57c41619a005587af01174ad.wasm.unityweb\" -i \"Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.wasm\" --comment \"UnityWeb Compressed Content (brotli)\"",
       "Inputs": [
         "Library/Bee/artifacts/WebGL/build/debug_WebGL_wasm/build.wasm"
       ],
       "Outputs": [
-        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/c1d2280bf10cffa514cf6328f0bb2516.wasm.unityweb"
+        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/6d2339ea57c41619a005587af01174ad.wasm.unityweb"
       ],
       "ToBuildDependencies": [
         420
@@ -16563,13 +16563,13 @@
       "DebugActionIndex": 428
     },
     {
-      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/71650af93d74f1d1a8294fec590012f3.data.unityweb",
-      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/71650af93d74f1d1a8294fec590012f3.data.unityweb\" -i \"Library/Bee/artifacts/WebGL/webgl.data\" --comment \"UnityWeb Compressed Content (brotli)\"",
+      "Annotation": "Brotli Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/1cd8e4dc7b4baeb6ea5efcf7910bd4c1.data.unityweb",
+      "Action": "\"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/win_x86_64/brotli.exe\" -o \"Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/1cd8e4dc7b4baeb6ea5efcf7910bd4c1.data.unityweb\" -i \"Library/Bee/artifacts/WebGL/webgl.data\" --comment \"UnityWeb Compressed Content (brotli)\"",
       "Inputs": [
         "Library/Bee/artifacts/WebGL/webgl.data"
       ],
       "Outputs": [
-        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/71650af93d74f1d1a8294fec590012f3.data.unityweb"
+        "Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/1cd8e4dc7b4baeb6ea5efcf7910bd4c1.data.unityweb"
       ],
       "ToBuildDependencies": [
         428
@@ -16580,7 +16580,7 @@
     },
     {
       "Annotation": "PreprocessJS Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/Builds.loader.js",
-      "Action": "cd /d \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools\" && \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Emscripten/node/node.exe\" \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Preprocess.js\"  \"locals.cwd='C\\x3a/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools'\"  \"locals.inputPath='UnityLoader/UnityLoader.js'\"  \"locals.outputPath='C\\x3a/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/Builds.loader.js'\"  \"locals.minifyOutput=true\"  \"COMPANY_NAME='DefaultCompany'\" \"PRODUCT_NAME='Color portal'\" \"PRODUCT_VERSION='0.1'\" \"WIDTH=960\" \"HEIGHT=600\" \"SPLASH_SCREEN_STYLE='Dark'\" \"BACKGROUND_COLOR='\\x23231F20'\" \"DATA_FILENAME='71650af93d74f1d1a8294fec590012f3.data.unityweb'\" \"FRAMEWORK_FILENAME='897c7ff1ffd7223fd68a1fb85dd71790.js.unityweb'\" \"CODE_FILENAME='c1d2280bf10cffa514cf6328f0bb2516.wasm.unityweb'\" \"MEMORY_FILENAME=''\" \"SYMBOLS_FILENAME=''\" \"BACKGROUND_FILENAME=''\" \"USE_WASM=true\" \"USE_THREADS=false\" \"USE_WEBGL_1_0=true\" \"USE_WEBGL_2_0=true\" \"WEBGL_POWER_PREFERENCE=2\" \"USE_DATA_CACHING=false\" \"DECOMPRESSION_FALLBACK='Brotli'\" \"TOTAL_MEMORY=16777216\" \"DEVELOPMENT_PLAYER=false\" \"UNITY_VERSION='2021.3.14f1'\" \"MOBILE_RENDER_SCALE='2.0'\" \"RENDER_SCALE='1.6'\" \"LOADER_FILENAME='Builds.loader.js'\"",
+      "Action": "cd /d \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools\" && \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Emscripten/node/node.exe\" \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Preprocess.js\"  \"locals.cwd='C\\x3a/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools'\"  \"locals.inputPath='UnityLoader/UnityLoader.js'\"  \"locals.outputPath='C\\x3a/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/Build/Builds.loader.js'\"  \"locals.minifyOutput=true\"  \"COMPANY_NAME='DefaultCompany'\" \"PRODUCT_NAME='Color portal'\" \"PRODUCT_VERSION='0.1'\" \"WIDTH=960\" \"HEIGHT=600\" \"SPLASH_SCREEN_STYLE='Dark'\" \"BACKGROUND_COLOR='\\x23231F20'\" \"DATA_FILENAME='1cd8e4dc7b4baeb6ea5efcf7910bd4c1.data.unityweb'\" \"FRAMEWORK_FILENAME='d8abeede8750d86d8d848e6cf29cd816.js.unityweb'\" \"CODE_FILENAME='6d2339ea57c41619a005587af01174ad.wasm.unityweb'\" \"MEMORY_FILENAME=''\" \"SYMBOLS_FILENAME=''\" \"BACKGROUND_FILENAME=''\" \"USE_WASM=true\" \"USE_THREADS=false\" \"USE_WEBGL_1_0=true\" \"USE_WEBGL_2_0=true\" \"WEBGL_POWER_PREFERENCE=2\" \"USE_DATA_CACHING=false\" \"DECOMPRESSION_FALLBACK='Brotli'\" \"TOTAL_MEMORY=16777216\" \"DEVELOPMENT_PLAYER=false\" \"UNITY_VERSION='2021.3.14f1'\" \"MOBILE_RENDER_SCALE='2.0'\" \"RENDER_SCALE='1.6'\" \"LOADER_FILENAME='Builds.loader.js'\"",
       "Inputs": [
         "UnityLoader/UnityLoader.js"
       ],
@@ -16592,7 +16592,7 @@
     },
     {
       "Annotation": "PreprocessJS Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/index.html",
-      "Action": "cd /d \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools\" && \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Emscripten/node/node.exe\" \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Preprocess.js\"  \"locals.cwd='C\\x3a/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools'\"  \"locals.inputPath='C\\x3a/Users/Andrey/Color portal/Assets/WebGLTemplates/FullscreenWindow/index.html'\"  \"locals.outputPath='C\\x3a/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/index.html'\"  \"locals.minifyOutput=false\"  \"COMPANY_NAME='DefaultCompany'\" \"PRODUCT_NAME='Color portal'\" \"PRODUCT_VERSION='0.1'\" \"WIDTH=960\" \"HEIGHT=600\" \"SPLASH_SCREEN_STYLE='Dark'\" \"BACKGROUND_COLOR='\\x23231F20'\" \"DATA_FILENAME='71650af93d74f1d1a8294fec590012f3.data.unityweb'\" \"FRAMEWORK_FILENAME='897c7ff1ffd7223fd68a1fb85dd71790.js.unityweb'\" \"CODE_FILENAME='c1d2280bf10cffa514cf6328f0bb2516.wasm.unityweb'\" \"MEMORY_FILENAME=''\" \"SYMBOLS_FILENAME=''\" \"BACKGROUND_FILENAME=''\" \"USE_WASM=true\" \"USE_THREADS=false\" \"USE_WEBGL_1_0=true\" \"USE_WEBGL_2_0=true\" \"WEBGL_POWER_PREFERENCE=2\" \"USE_DATA_CACHING=false\" \"DECOMPRESSION_FALLBACK='Brotli'\" \"TOTAL_MEMORY=16777216\" \"DEVELOPMENT_PLAYER=false\" \"UNITY_VERSION='2021.3.14f1'\" \"MOBILE_RENDER_SCALE='2.0'\" \"RENDER_SCALE='1.6'\" \"LOADER_FILENAME='Builds.loader.js'\"",
+      "Action": "cd /d \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools\" && \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Emscripten/node/node.exe\" \"C:/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Preprocess.js\"  \"locals.cwd='C\\x3a/Program Files/Unity 2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools'\"  \"locals.inputPath='C\\x3a/Users/Andrey/Color portal/Assets/WebGLTemplates/FullscreenWindow/index.html'\"  \"locals.outputPath='C\\x3a/Users/Andrey/Color portal/Samples/Yandex Games/13.0.0/Playtesting Sample/Builds/index.html'\"  \"locals.minifyOutput=false\"  \"COMPANY_NAME='DefaultCompany'\" \"PRODUCT_NAME='Color portal'\" \"PRODUCT_VERSION='0.1'\" \"WIDTH=960\" \"HEIGHT=600\" \"SPLASH_SCREEN_STYLE='Dark'\" \"BACKGROUND_COLOR='\\x23231F20'\" \"DATA_FILENAME='1cd8e4dc7b4baeb6ea5efcf7910bd4c1.data.unityweb'\" \"FRAMEWORK_FILENAME='d8abeede8750d86d8d848e6cf29cd816.js.unityweb'\" \"CODE_FILENAME='6d2339ea57c41619a005587af01174ad.wasm.unityweb'\" \"MEMORY_FILENAME=''\" \"SYMBOLS_FILENAME=''\" \"BACKGROUND_FILENAME=''\" \"USE_WASM=true\" \"USE_THREADS=false\" \"USE_WEBGL_1_0=true\" \"USE_WEBGL_2_0=true\" \"WEBGL_POWER_PREFERENCE=2\" \"USE_DATA_CACHING=false\" \"DECOMPRESSION_FALLBACK='Brotli'\" \"TOTAL_MEMORY=16777216\" \"DEVELOPMENT_PLAYER=false\" \"UNITY_VERSION='2021.3.14f1'\" \"MOBILE_RENDER_SCALE='2.0'\" \"RENDER_SCALE='1.6'\" \"LOADER_FILENAME='Builds.loader.js'\"",
       "Inputs": [
         "C:/Users/Andrey/Color portal/Assets/WebGLTemplates/FullscreenWindow/index.html"
       ],
