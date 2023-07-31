@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CW.Common", "CW.Common.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.YandexGames.Samples.Playtesting", "Agava.YandexGames.Samples.Playtesting.csproj", "{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.VKGames.Samples.Playtesting", "Agava.VKGames.Samples.Playtesting.csproj", "{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalizationEditor", "LeanLocalizationEditor.csproj", "{05508777-2A64-A972-33AE-CB38D19F36F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanTouch", "LeanTouch.csproj", "{5E850675-0F71-11DB-01E2-79396E73DF2F}"
@@ -20,8 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization.TMP", "LeanLocalization.TMP.csproj", "{0AEBE755-5022-A991-0EA8-8BA33DA83125}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{97C617C0-3A97-7317-8704-D8D6AAB39364}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.VKGames.Samples.Playtesting", "Agava.VKGames.Samples.Playtesting.csproj", "{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.Utils.Editor", "Boxophobic.Utils.Editor.csproj", "{42475A3C-1165-D861-29D9-7BE105FFD5EC}"
 EndProject
@@ -45,6 +45,10 @@ Global
 		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05508777-2A64-A972-33AE-CB38D19F36F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05508777-2A64-A972-33AE-CB38D19F36F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05508777-2A64-A972-33AE-CB38D19F36F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,10 +77,6 @@ Global
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU

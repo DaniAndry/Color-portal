@@ -787,14 +787,14 @@
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
@@ -826,6 +826,9 @@
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Agava.VKGames">
+      <HintPath>Library\ScriptAssemblies\Agava.VKGames.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
@@ -841,9 +844,6 @@
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
-    <Reference Include="Agava.VKGames">
-      <HintPath>Library\ScriptAssemblies\Agava.VKGames.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
@@ -857,6 +857,10 @@
     <ProjectReference Include="Agava.YandexGames.Samples.Playtesting.csproj">
       <Project>{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}</Project>
       <Name>Agava.YandexGames.Samples.Playtesting</Name>
+    </ProjectReference>
+    <ProjectReference Include="Agava.VKGames.Samples.Playtesting.csproj">
+      <Project>{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}</Project>
+      <Name>Agava.VKGames.Samples.Playtesting</Name>
     </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
       <Project>{42475A3C-1165-D861-29D9-7BE105FFD5EC}</Project>
@@ -889,10 +893,6 @@
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{E45204B2-0C3C-87B7-E167-D940B5E40329}</Project>
       <Name>LeanCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="Agava.VKGames.Samples.Playtesting.csproj">
-      <Project>{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}</Project>
-      <Name>Agava.VKGames.Samples.Playtesting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

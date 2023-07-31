@@ -56,12 +56,12 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\ItemCatalogPanel.cs" />
+    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\ItemCatalog.cs" />
+    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\PurchasedItemsSaveData.cs" />
     <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\PurchasedItemListPanel.cs" />
+    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\ItemCatalogPanel.cs" />
     <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\ItemPanel.cs" />
     <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\PlaytestingCanvas.cs" />
-    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\PurchasedItemsSaveData.cs" />
-    <Compile Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Billing\ItemCatalog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Samples\VK Games\2.0.1\Playtesting Sample\Agava.VKGames.Samples.Playtesting.asmdef" />

@@ -59,7 +59,6 @@
     <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\PurchasedProductPanel.cs" />
     <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\WebEventSystem.cs" />
     <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\ProductPanel.cs" />
-    <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\PlaytestingCanvas.cs" />
     <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\ProductCatalogPanel.cs" />
     <Compile Include="Assets\Samples\Yandex Games\13.0.0\Playtesting Sample\PurchasedProductListPanel.cs" />
   </ItemGroup>
