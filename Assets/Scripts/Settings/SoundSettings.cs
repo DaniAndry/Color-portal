@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-
     [SerializeField] private AudioSource _music;
     [SerializeField] private AudioSource _sound;
     [SerializeField] private AudioSource _finish;
@@ -26,6 +25,7 @@ public class SoundSettings : MonoBehaviour
 
         ChangeImage();
     }
+
 
     public void SwichVolumeMusic()
     {
@@ -65,7 +65,6 @@ public class SoundSettings : MonoBehaviour
             ChangeImage();
         }
     }
-
 
     private void ChangeImage()
     {

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Stopwatch : MonoBehaviour
 {
+    [SerializeField] private Focus _focus;
     [SerializeField] private Transform _secondHand;
     [SerializeField] private FinalCube _finalCube;
     [SerializeField] private Button _menuButton;
@@ -16,7 +17,10 @@ public class Stopwatch : MonoBehaviour
 
     private void Start()
     {
-        _finalCube.Finished += StopTimmer;
+        _finalCube.Finished += DeactiveWach;
+        _focus.FocusMissing += StopTimmer;
+        _focus.FocusIsBack += StartTimmer;
+
         _menuButton.onClick.AddListener(StopTimmer);
         _closeButton.onClick.AddListener(StartTimmer);
         _animation = GetComponent<Animation>();
@@ -25,7 +29,9 @@ public class Stopwatch : MonoBehaviour
 
     private void OnDisable()
     {
-        _finalCube.Finished -= StopTimmer;
+        _finalCube.Finished -= DeactiveWach;
+        _focus.FocusMissing -= StopTimmer;
+        _focus.FocusIsBack -= StartTimmer;
     }
 
     private void FixedUpdate()
@@ -34,6 +40,11 @@ public class Stopwatch : MonoBehaviour
         {
             UpdateTime();
         }
+    }
+
+    private void DeactiveWach()
+    {
+        gameObject.SetActive(false);
     }
 
     public int GetTime()

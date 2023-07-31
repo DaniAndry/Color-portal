@@ -1,16 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Ad
     - BonusSystem
     - CameraFollow
     - ColorCube
+    - DataLoader
     - Education
     - EmptyCube
     - FinalCube
     - FinishScreen
+    - Focus
     - InitializingSDK
+    - JsonSaver
     - LeaderboardLoader
-    - LeaderboardOpener
     - LevelButton
     - LevelUnlocker
     - LoadMenu
@@ -22,14 +25,17 @@ ScriptsOnlyBuild:
     - Player
     - PlayerAnimations
     - PlayerAudio
+    - PlayerData
     - PlayerMover
     - PlayerScore
     - PlayerTeleport
+    - Points
     - Score
     - ScoreCounter
     - SondButton
+    - SoundInGame
+    - SoundMenu
     - SoundSettings
-    - Stars
     - StarsInMenu
     - StartLocalization
     - StartWindow
@@ -52,15 +58,11 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    Unity.Timeline.dll:
-    - UnityEngine.Timeline.TimelineAsset
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -97,8 +99,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
     - TMPro.VertexGradient
-    Unity.Timeline:
-    - UnityEngine.Timeline.TimelineAsset/EditorSettings
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -119,11 +119,23 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
+    fullTypeName: StartWindow
+    methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SondButton
+    methodName: Play
+  - assembly: Assembly-CSharp
     fullTypeName: LevelButton
     methodName: OnClick
   - assembly: Assembly-CSharp
     fullTypeName: LevelButton
     methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: StartWindow
+    methodName: CloseLeaderboardMessage
+  - assembly: Assembly-CSharp
+    fullTypeName: SondButton
+    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: StartWindow
     methodName: StartGame
@@ -152,16 +164,25 @@ ScriptsOnlyBuild:
     fullTypeName: SondButton
     methodName: Play
   - assembly: Assembly-CSharp
-    fullTypeName: LevelButton
-    methodName: OnClick
+    fullTypeName: StartWindow
+    methodName: CloseLeaderboardMessage
+  - assembly: Assembly-CSharp
+    fullTypeName: SondButton
+    methodName: Play
   - assembly: Assembly-CSharp
     fullTypeName: LevelButton
     methodName: OnClick
   - assembly: Assembly-CSharp
-    fullTypeName: LeaderboardOpener
+    fullTypeName: StartWindow
+    methodName: Agrement
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelButton
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: StartWindow
     methodName: OpenLeaderboard
   - assembly: Assembly-CSharp
-    fullTypeName: LeaderboardOpener
+    fullTypeName: StartWindow
     methodName: CloseLeaderboard
   - assembly: Assembly-CSharp
     fullTypeName: LevelButton
@@ -194,6 +215,9 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
     fullTypeName: MenuButton
     methodName: LoadMenu
   - assembly: Assembly-CSharp
@@ -203,11 +227,17 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: LoadNextScene
   - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseSettings
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeMusic
@@ -221,11 +251,38 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: OpenMenu
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeSound
@@ -239,90 +296,6 @@ ScriptsOnlyBuild:
     fullTypeName: Menu
     methodName: OpenMenu
   - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
     fullTypeName: MenuButton
     methodName: LoadMenu
   - assembly: Assembly-CSharp
@@ -332,38 +305,14 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
+    fullTypeName: Ad
+    methodName: CheckPushCount
   - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseMenu
@@ -374,131 +323,32 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
+    fullTypeName: Ad
+    methodName: CheckPushCount
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: OpenSettings
   - assembly: Assembly-CSharp
     fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
     methodName: LoadNextScene
   - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
+    fullTypeName: Ad
+    methodName: CheckPushCount
   - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: LoadNextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: CloseSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenMenu
+    fullTypeName: Ad
+    methodName: ShowVideo
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeSound
   - assembly: Assembly-CSharp
     fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
-  - assembly: Assembly-CSharp
-    fullTypeName: Menu
     methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseMenu
@@ -506,26 +356,26 @@ ScriptsOnlyBuild:
     fullTypeName: Menu
     methodName: CloseSettings
   - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
     fullTypeName: NextSceneButton
     methodName: LoadNextScene
   - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
+    fullTypeName: Ad
+    methodName: CheckPushCount
   - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeSound
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuButton
-    methodName: LoadMenu
+    fullTypeName: Menu
+    methodName: OpenSettings
   - assembly: Assembly-CSharp
     fullTypeName: NextSceneButton
-    methodName: LoadNextScene
+    methodName: ReloadScene
   - assembly: Assembly-CSharp
-    fullTypeName: SoundSettings
-    methodName: SwichVolumeMusic
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeSound
@@ -536,8 +386,41 @@ ScriptsOnlyBuild:
     fullTypeName: MenuButton
     methodName: LoadMenu
   - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: OpenMenu
@@ -545,11 +428,8 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
-    fullTypeName: Menu
-    methodName: OpenSettings
-  - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
+    fullTypeName: Ad
+    methodName: CheckPushCount
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseSettings
@@ -560,11 +440,149 @@ ScriptsOnlyBuild:
     fullTypeName: NextSceneButton
     methodName: ReloadScene
   - assembly: Assembly-CSharp
-    fullTypeName: NextSceneButton
-    methodName: ReloadScene
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseMenu
@@ -572,8 +590,80 @@ ScriptsOnlyBuild:
     fullTypeName: MenuButton
     methodName: LoadMenu
   - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
   - assembly: Assembly-CSharp
     fullTypeName: SoundSettings
     methodName: SwichVolumeSound
@@ -581,11 +671,86 @@ ScriptsOnlyBuild:
     fullTypeName: SoundSettings
     methodName: SwichVolumeMusic
   - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
     fullTypeName: NextSceneButton
     methodName: LoadNextScene
   - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuButton
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: LoadNextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: CloseMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: ShowVideo
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundSettings
+    methodName: SwichVolumeSound
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: OpenSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: NextSceneButton
+    methodName: ReloadScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Ad
+    methodName: CheckPushCount
   sceneClasses:
     Assets/Scenes/Level1.unity:
     - Class: 1
@@ -647,59 +812,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6760}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
     - Class: 114
-      Script: {instanceID: 28188}
+      Script: {instanceID: 8036}
     - Class: 114
-      Script: {instanceID: 28712}
+      Script: {instanceID: 8120}
     - Class: 114
-      Script: {instanceID: 35772}
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -782,52 +957,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -907,52 +1100,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1032,52 +1243,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1157,52 +1386,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1282,52 +1529,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1407,52 +1672,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1532,52 +1815,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1657,52 +1958,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1782,52 +2101,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1907,52 +2244,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -2032,52 +2387,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2004}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 5296}
+      Script: {instanceID: 4682}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 6056}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6262}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 7086}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 5702}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 6068}
     - Class: 114
-      Script: {instanceID: 8200}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 8246}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 7098}
+    - Class: 114
+      Script: {instanceID: 8036}
+    - Class: 114
+      Script: {instanceID: 8120}
+    - Class: 114
+      Script: {instanceID: 8190}
+    - Class: 114
+      Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 8260}
+    - Class: 114
+      Script: {instanceID: 8440}
+    - Class: 114
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -2149,54 +2522,58 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1714}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2442}
+      Script: {instanceID: 2444}
     - Class: 114
-      Script: {instanceID: 2788}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 3968}
+      Script: {instanceID: 4174}
     - Class: 114
-      Script: {instanceID: 4168}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4828}
     - Class: 114
-      Script: {instanceID: 4822}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 5382}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 5658}
+      Script: {instanceID: 5626}
     - Class: 114
-      Script: {instanceID: 6374}
+      Script: {instanceID: 5668}
     - Class: 114
-      Script: {instanceID: 6378}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 6916}
+      Script: {instanceID: 6390}
     - Class: 114
-      Script: {instanceID: 7402}
+      Script: {instanceID: 6928}
     - Class: 114
-      Script: {instanceID: 7608}
+      Script: {instanceID: 7414}
     - Class: 114
-      Script: {instanceID: 7932}
+      Script: {instanceID: 7620}
     - Class: 114
-      Script: {instanceID: 7958}
+      Script: {instanceID: 7944}
     - Class: 114
-      Script: {instanceID: 8024}
+      Script: {instanceID: 7970}
     - Class: 114
-      Script: {instanceID: 8426}
+      Script: {instanceID: 8036}
     - Class: 114
-      Script: {instanceID: 8720}
+      Script: {instanceID: 8440}
     - Class: 114
-      Script: {instanceID: 25582}
+      Script: {instanceID: 8490}
+    - Class: 114
+      Script: {instanceID: 8736}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -2213,8 +2590,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 320
       Script: {instanceID: 0}
     Assets/Scenes/StartScreen.unity:
     - Class: 1
@@ -2254,17 +2629,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2308}
     - Class: 114
-      Script: {instanceID: 3680}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 4444}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 4728}
+      Script: {instanceID: 3686}
+    - Class: 114
+      Script: {instanceID: 4450}
     - Class: 114
       Script: {instanceID: 4734}
     - Class: 114
-      Script: {instanceID: 4758}
+      Script: {instanceID: 4740}
     - Class: 114
-      Script: {instanceID: 5562}
+      Script: {instanceID: 4764}
+    - Class: 114
+      Script: {instanceID: 5570}
+    - Class: 114
+      Script: {instanceID: 5626}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2408,7 +2789,7 @@ ScriptsOnlyBuild:
     className: CwCameraLook
   - hash:
       serializedVersion: 2
-      Hash: 0e431ac83f160cd592eaa6d1874792c6
+      Hash: 3dc8f090201639170b73ceac8dde679a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartWindow
@@ -2522,6 +2903,12 @@ ScriptsOnlyBuild:
     className: UnityOnPointerUpMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 83a6d56fd1055ef07b171a10ae42d261
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BonusSystem
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Boxophobic.Utils.Scripts.dll
     namespaceName: 
@@ -2568,6 +2955,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataLoader
   - hash:
       serializedVersion: 2
       Hash: b5aaf686465544e9e949e46e293afee1
@@ -2634,6 +3027,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JsonSaver
   - hash:
       serializedVersion: 2
       Hash: 370d1c3d7101587eb98176cdef040df9
@@ -2888,12 +3287,6 @@ ScriptsOnlyBuild:
     className: LeanLocalizedTextMesh
   - hash:
       serializedVersion: 2
-      Hash: 45c494d67c607999564205ba8e6aee36
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LeaderboardOpener
-  - hash:
-      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Flow.dll
     namespaceName: Unity.VisualScripting
@@ -2904,6 +3297,12 @@ ScriptsOnlyBuild:
     assemblyName: CW.Common.dll
     namespaceName: CW.Common
     className: CwRoot
+  - hash:
+      serializedVersion: 2
+      Hash: 9a1dd3365553a081d6a9fe9a73406bb6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ad
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -3014,12 +3413,6 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: d91fcd9ac7bd86d3d771dd6171620fad
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: switch_scenes
-  - hash:
-      serializedVersion: 2
       Hash: c08a332a6ca42922903f2e176f7b33c9
     assemblyName: LeanCommon.dll
     namespaceName: Lean.Common
@@ -3030,6 +3423,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: DictionaryAsset
+  - hash:
+      serializedVersion: 2
+      Hash: a31ef765293213a8dd5ae06bedf97648
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundInGame
   - hash:
       serializedVersion: 2
       Hash: 5f0a1878b4792ac6d0fe1b5ac4d62202
@@ -3056,13 +3455,13 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: dd6b332b148060d5e1003b7f836ee0ab
+      Hash: e3c3c0452746eb7d7ce667af056b9438
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FinishScreen
   - hash:
       serializedVersion: 2
-      Hash: 97643b4569f2c959427d55c811a71a2d
+      Hash: ea9f4336ecd2716c945619611f83b27a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NextSceneButton
@@ -3080,7 +3479,7 @@ ScriptsOnlyBuild:
     className: LoadMenu
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 09a85ed48cea1fa409200f1b796ed8d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitializingSDK
@@ -3114,6 +3513,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SondButton
+  - hash:
+      serializedVersion: 2
+      Hash: b71b82e602732696566a7ebf7204d63f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundMenu
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -3221,7 +3626,7 @@ ScriptsOnlyBuild:
       Hash: f809950d335fd5600f8a7975b852052e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Stars
+    className: Points
   - hash:
       serializedVersion: 2
       Hash: 72be464cae07429f847cf1e15217fca3
@@ -3278,10 +3683,22 @@ ScriptsOnlyBuild:
     className: CwCameraMove
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerData
+  - hash:
+      serializedVersion: 2
       Hash: d44dfd6a559310cf1edfb5e700e7549d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelUnlocker
+  - hash:
+      serializedVersion: 2
+      Hash: 6f6057cf7e520176dc4132d2beb91426
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreCounter
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -3332,7 +3749,7 @@ ScriptsOnlyBuild:
     className: CwLightIntensity
   - hash:
       serializedVersion: 2
-      Hash: b2585953a1b2ffdcf48523a34dac505b
+      Hash: 4077c04a5a8631ff2b51561726cbe95b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FinalCube
@@ -3374,7 +3791,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 552aa1fa80dab1d8a54e0c65e7b8a7e6
+      Hash: 2519ed825947ba883c754aebddf26c09
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Unlocker
@@ -3428,7 +3845,7 @@ ScriptsOnlyBuild:
     className: LeanLocalizedTextMeshProFont
   - hash:
       serializedVersion: 2
-      Hash: 903ba2dcb183fc920aeac7889320ea92
+      Hash: d86dbcf2991ee852304468eae6fd2b90
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Education
@@ -3710,6 +4127,12 @@ ScriptsOnlyBuild:
     className: LeanFingerSwipe
   - hash:
       serializedVersion: 2
+      Hash: 25981eb6825a30ee4b2f57c5f093cd69
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stopwatch
+  - hash:
+      serializedVersion: 2
       Hash: 5058e62971372d10db24fe80294c7a3d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -3788,6 +4211,12 @@ ScriptsOnlyBuild:
     className: LeanLocalizedTextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Focus
+  - hash:
+      serializedVersion: 2
       Hash: 48a7f0aa1e09fb60df047423c974aa5d
     assemblyName: Boxophobic.Utils.Scripts.dll
     namespaceName: Boxophobic.Utils
@@ -3828,24 +4257,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 13e13baaaa0d8943b11c01bc66c6f37b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Stopwatch
-  - hash:
-      serializedVersion: 2
-      Hash: 83a6d56fd1055ef07b171a10ae42d261
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BonusSystem
-  - hash:
-      serializedVersion: 2
-      Hash: 6f6057cf7e520176dc4132d2beb91426
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreCounter
   platform: 20
   scenePathNames:
   - Assets/Scenes/StartScreen.unity

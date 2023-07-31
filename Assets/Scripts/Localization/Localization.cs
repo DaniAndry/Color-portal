@@ -10,9 +10,7 @@ public class Localization : MonoBehaviour
     {
         _language = PlayerPrefs.GetString("_currentLanguage");
         SelectLocalization(_language);
-        Debug.Log(_language);
     }
-
 
     private void Select()
     {
