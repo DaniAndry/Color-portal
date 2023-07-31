@@ -62,35 +62,41 @@
     <Compile Include="Assets\Scripts\Cubes\ColorCube.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
+    <Compile Include="Assets\Scripts\UI\BonusSystem.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Scripts\Data\DataLoader.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\Panel.cs" />
+    <Compile Include="Assets\Scripts\Data\JsonSaver.cs" />
     <Compile Include="Assets\Scripts\Localization\Localization.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Liderboard\PlayerScore.cs" />
-    <Compile Include="Assets\Scripts\Liderboard\LeaderboardOpener.cs" />
+    <Compile Include="Assets\Scripts\YandexSDK\Ad.cs" />
     <Compile Include="Assets\Scripts\Settings\Menu.cs" />
     <Compile Include="Assets\Scripts\UI\StarsInMenu.cs" />
-    <Compile Include="Assets\HONETi\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
+    <Compile Include="Assets\Scripts\Settings\SoundInGame.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Scripts\UI\FinishScreen.cs" />
     <Compile Include="Assets\Scripts\UI\NextSceneButton.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\LoadMenu.cs" />
     <Compile Include="Assets\Scripts\YandexSDK\InitializingSDK.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Liderboard\Score.cs" />
     <Compile Include="Assets\Scripts\Settings\SondButton.cs" />
+    <Compile Include="Assets\Scripts\Settings\SoundMenu.cs" />
     <Compile Include="Assets\Scripts\UI\NeedPoints.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimations.cs" />
     <Compile Include="Assets\Scripts\Cubes\Cube.cs" />
-    <Compile Include="Assets\Scripts\UI\Stars.cs" />
+    <Compile Include="Assets\Scripts\Data\Points.cs" />
     <Compile Include="Assets\GUI Kit Casual Game\Scripts\PanelControl.cs" />
     <Compile Include="Assets\Scripts\UI\MenuButton.cs" />
+    <Compile Include="Assets\Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\UI\LevelUnlocker.cs" />
+    <Compile Include="Assets\Scripts\UI\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\Cubes\FinalCube.cs" />
     <Compile Include="Assets\Scripts\Cubes\EmptyCube.cs" />
     <Compile Include="Assets\Scripts\UI\Unlocker.cs" />
@@ -102,13 +108,12 @@
     <Compile Include="Assets\Scripts\UI\LevelButton.cs" />
     <Compile Include="Assets\Scripts\Liderboard\LeaderboardLoader.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAudio.cs" />
+    <Compile Include="Assets\Scripts\UI\Stopwatch.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerTeleport.cs" />
     <Compile Include="Assets\Scripts\UI\StepCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\Focus.cs" />
     <Compile Include="Assets\Scripts\Settings\SoundSettings.cs" />
-    <Compile Include="Assets\Scripts\UI\Stopwatch.cs" />
-    <Compile Include="Assets\Scripts\UI\BonusSystem.cs" />
-    <Compile Include="Assets\Scripts\UI\ScoreCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GUI Kit Casual Game\Extensions\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -836,6 +841,9 @@
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
+    <Reference Include="Agava.VKGames">
+      <HintPath>Library\ScriptAssemblies\Agava.VKGames.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
@@ -881,6 +889,10 @@
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{E45204B2-0C3C-87B7-E167-D940B5E40329}</Project>
       <Name>LeanCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="Agava.VKGames.Samples.Playtesting.csproj">
+      <Project>{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}</Project>
+      <Name>Agava.VKGames.Samples.Playtesting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -766,6 +766,9 @@
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
+    <Reference Include="Agava.VKGames">
+      <HintPath>Library\ScriptAssemblies\Agava.VKGames.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CW.Common.csproj">
@@ -807,6 +810,10 @@
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{E45204B2-0C3C-87B7-E167-D940B5E40329}</Project>
       <Name>LeanCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="Agava.VKGames.Samples.Playtesting.csproj">
+      <Project>{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}</Project>
+      <Name>Agava.VKGames.Samples.Playtesting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

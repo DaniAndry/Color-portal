@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Agava.YandexGames;
 
 public class FinishScreen : MonoBehaviour
 {
     [SerializeField] private StepCounter _stepCounter;
     [SerializeField] private TextMeshProUGUI _string;
+    [SerializeField] private TextMeshProUGUI _starsPoints;
     [SerializeField] private Image[] _stars;
 
     private int _currentPointsCount;

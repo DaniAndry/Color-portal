@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization.TMP", "Lea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{97C617C0-3A97-7317-8704-D8D6AAB39364}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.VKGames.Samples.Playtesting", "Agava.VKGames.Samples.Playtesting.csproj", "{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.Utils.Editor", "Boxophobic.Utils.Editor.csproj", "{42475A3C-1165-D861-29D9-7BE105FFD5EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.SkyboxCubemapExtended.Editor", "Boxophobic.SkyboxCubemapExtended.Editor.csproj", "{0264FDAF-27D1-73D2-DB6C-111AA0C0DB8A}"
@@ -71,6 +73,10 @@ Global
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97C617C0-3A97-7317-8704-D8D6AAB39364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F91C1E-BF79-7339-2B0E-8FAEA196D2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42475A3C-1165-D861-29D9-7BE105FFD5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -6,23 +6,16 @@ using UnityEngine.Events;
 public class InitializingSDK : MonoBehaviour
 {
     public UnityAction SDKInitialized;
-    private int _levels = 13;
+
+    [SerializeField] DataLoader _dataLoader;
 
     private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
-        ClearState();
         PlayerPrefs.SetFloat("SoundVolume", 100);
         PlayerPrefs.SetFloat("MusicVolume", 100);
     }
 
-    private void ClearState()
-    {
-        for (int i = 0; i < _levels; i++)
-        {
-            PlayerPrefs.SetInt("PointsLevel" + i, 0);
-        }
-    }
 
     private IEnumerator Start()
     {
@@ -32,6 +25,7 @@ public class InitializingSDK : MonoBehaviour
         {
             SDKInitialized?.Invoke();
             PlayerPrefs.SetString("_currentLanguage", YandexGamesSdk.Environment.i18n.lang);
+            _dataLoader.LoadPlayerData();
         }
 
     }

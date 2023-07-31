@@ -9,7 +9,8 @@ public class FinalCube : Cube
     public event UnityAction Finished;
 
     [SerializeField] private List<ParticleSystem> _particles;
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private GameObject _finishPanel;
+    [SerializeField] private GameObject _gamePanel;
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _applause;
@@ -46,7 +47,8 @@ public class FinalCube : Cube
 
     private void ActivatePanel()
     {
-        _panel.SetActive(true);
+        _finishPanel.SetActive(true);
+        _gamePanel.SetActive(false);
         Finished?.Invoke();
     }
 }

@@ -18,7 +18,7 @@ public class LeaderboardLoader : MonoBehaviour
 
     private void Start()
     {
-        _currentScore = PlayerPrefs.GetInt("PlayerPoints");
+        _currentScore = PlayerPrefs.GetInt("ScoreCount");
         DisableAllRecords();
         _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
         SelectLanguage(_currentLanguage);
@@ -50,7 +50,7 @@ public class LeaderboardLoader : MonoBehaviour
                 _anonymous = "Anonymous";
                 break;
             case "tr":
-                _anonymous = "anonim";
+                _anonymous = "Anonim";
                 break;
             default:
                 _anonymous = "Инкогнито";
@@ -61,11 +61,6 @@ public class LeaderboardLoader : MonoBehaviour
     private void LoadYandexLeaderboard()
     {
         PlayerAccount.RequestPersonalProfileDataPermission();
-
-        if (PlayerAccount.IsAuthorized == false)
-        {
-            PlayerAccount.Authorize();
-        }
 
         Leaderboard.GetEntries(_leaderboardName, (result) =>
         {
@@ -103,7 +98,16 @@ public class LeaderboardLoader : MonoBehaviour
         if (result != null)
         {
             _playerScore.gameObject.SetActive(true);
-            _playerScore.SetName(result.player.publicName);
+
+            if (string.IsNullOrEmpty(result.player.publicName))
+            {
+                _playerScore.SetName(_anonymous);
+            }
+            else
+            {
+                _playerScore.SetName(result.player.publicName);
+            }
+
             _playerScore.SetScore(result.score.ToString());
             _playerScore.SetRank(result.rank);
         }
