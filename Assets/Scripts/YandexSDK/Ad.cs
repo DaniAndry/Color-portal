@@ -1,4 +1,5 @@
 using Agava.YandexGames;
+//using Agava.VKGames;
 using UnityEngine;
 
 public class Ad : MonoBehaviour
@@ -11,24 +12,25 @@ public class Ad : MonoBehaviour
 
     private bool _isEnough;
     private bool _isRun;
-    
+
     public bool IsRun => _isRun;
-        
+
     private void Start()
     {
         _pushCount = PlayerPrefs.GetInt("PushCount", 0);
 
         if (HasEnoughClicks())
         {
-            _isRun = true;
+      _isRun = true;
             ShowBanner();
+            _isEnough = false;
         }
     }
 
     public void ShowVideo()
     {
-        VideoAd.Show(OpenAd, AddBonus, CloseAd);
-    }
+            VideoAd.Show(OpenAd, AddBonus, CloseAd);
+       }
 
     public void CheckPushCount()
     {
@@ -42,16 +44,21 @@ public class Ad : MonoBehaviour
 
         if (_pushCount >= needCount)
         {
-            _isEnough = true;
             PlayerPrefs.SetInt("PushCount", 0);
+            _isEnough = true;
+        }
+        else
+        {
+            _isEnough= false;
         }
         return _isEnough;
     }
 
     private void ShowBanner()
     {
+        OpenAd();
         InterstitialAd.Show(OpenAd, CloseInterstitialAd);
-        _isEnough = false;
+        PlayerPrefs.SetInt("PushCount", 0);
     }
 
     private void OpenAd()

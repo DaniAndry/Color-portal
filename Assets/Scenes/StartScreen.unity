@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65012c54cf24ad4cb8e6d9315a653c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sdk: {fileID: 976581307}
+  _sdk: {fileID: 976581307}
 --- !u!4 &1235823179
 Transform:
   m_ObjectHideFlags: 0

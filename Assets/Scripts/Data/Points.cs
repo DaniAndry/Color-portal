@@ -15,7 +15,7 @@ public class Points : MonoBehaviour
 
     private void Awake()
     {
-        //ClearState();    
+       // ClearState();    
         _playerData = GetComponent<PlayerData>();
         _jsonSaver = GetComponent<JsonSaver>();
         Calculate();

@@ -1,4 +1,5 @@
 using Agava.YandexGames;
+//using Agava.VKGames;
 using UnityEngine;
 
 public class StartWindow : MonoBehaviour
@@ -15,6 +16,8 @@ public class StartWindow : MonoBehaviour
     private bool _isLeaderboardActive;
     private bool _isMenuPanelActive;
 
+    private int _currentScore;
+
 
     public void StartGame()
     {
@@ -30,9 +33,8 @@ public class StartWindow : MonoBehaviour
     {
         _isStartPanelActive = _startPanel.activeSelf;
         _isLeaderboardActive = _leaderboard.activeSelf;
-
-        _settingsPanel.SetActive(true);
         _startPanel.SetActive(false);
+        _settingsPanel.SetActive(true);
     }
 
     public void CloseSettings()
@@ -54,6 +56,7 @@ public class StartWindow : MonoBehaviour
             OpenLeaderboardMessage();
         }
     }
+
 
     public void CloseLeaderboard()
     {

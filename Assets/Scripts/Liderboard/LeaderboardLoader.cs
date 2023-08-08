@@ -22,12 +22,10 @@ public class LeaderboardLoader : MonoBehaviour
         DisableAllRecords();
         _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
         SelectLanguage(_currentLanguage);
-#if UNITY_WEBGL && !UNITY_EDITOR
-  
-       Leaderboard.SetScore("Score", _currentScore);
-        
+
+        Leaderboard.SetScore("Score", _currentScore);
+
         LoadYandexLeaderboard();
-#endif
     }
 
     private void DisableAllRecords()
@@ -39,6 +37,7 @@ public class LeaderboardLoader : MonoBehaviour
             score.gameObject.SetActive(false);
         }
     }
+
     private void SelectLanguage(string language)
     {
         switch (language)

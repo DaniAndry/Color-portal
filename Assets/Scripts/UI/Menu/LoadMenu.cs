@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadMenu : MonoBehaviour
 {
-    [SerializeField] private InitializingSDK sdk;
+    [SerializeField] private InitializingSDK _sdk;
 
-    private void FixedUpdate()
+    private void OnEnable()
     {
-        sdk.SDKInitialized += Load;
+        _sdk.SDKInitialized += Load;
     }
     private void Load()
     {
