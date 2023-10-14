@@ -4,8 +4,11 @@ using UnityEngine.Events;
 
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private Menu _menu;
+
     private float _duration = 0.5f;
     private float _maxDistance = 1.2f;
+    private float _delay;
 
     private bool _isMoving;
     public event UnityAction StepCountChanged;
@@ -17,20 +20,25 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !_isMoving)
-        {
-            _startTouchPosition = Input.mousePosition;
-        }
+        _delay += Time.deltaTime;
 
-        if (Input.GetMouseButtonUp(0) && !_isMoving)
+        if (!_menu.isOpen)
         {
-            _endTouchPosition = Input.mousePosition;
-            TryToMoveForSwipe();
-        }
+            if (Input.GetMouseButtonDown(0) && !_isMoving)
+            {
+                _startTouchPosition = Input.mousePosition;
+            }
 
-        if (Input.anyKey && !_isMoving)
-        {
-            TryToMoveForKeyboard();
+            if (Input.GetMouseButtonUp(0) && !_isMoving)
+            {
+                _endTouchPosition = Input.mousePosition;
+                TryToMoveForSwipe();
+            }
+
+            if (Input.anyKey && !_isMoving)
+            {
+                TryToMoveForKeyboard();
+            }
         }
     }
 
@@ -126,21 +134,24 @@ public class PlayerMover : MonoBehaviour
 
     private void Move(Vector3 targetPosition)
     {
-        bool wasMoving = _isMoving;
-
-        _isMoving = true;
-
-        transform.DOMove(targetPosition, _duration).OnComplete(() =>
+        if (_delay > 0.5f)
         {
-            _isMoving = false;
+            bool wasMoving = _isMoving;
 
-            if (!wasMoving)
+            _isMoving = true;
+
+            transform.DOMove(targetPosition, _duration).OnComplete(() =>
             {
-                Stoped?.Invoke();
-            }
-        });
+                _isMoving = false;
 
-        StepCountChanged?.Invoke();
-        Moved?.Invoke();
+                if (!wasMoving)
+                {
+                    Stoped?.Invoke();
+                }
+            });
+
+            StepCountChanged?.Invoke();
+            Moved?.Invoke();
+        }
     }
 }

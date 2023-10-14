@@ -1,4 +1,6 @@
 using UnityEngine;
+using Agava.WebUtility;
+
 
 public class Education : MonoBehaviour
 {
@@ -8,7 +10,6 @@ public class Education : MonoBehaviour
     [SerializeField] private GameObject _horrizontalButtons;
     [SerializeField] private GameObject _verticalButtons;
     [SerializeField] private PlayerMover _playerMover;
-
 
     private bool _isEducationEnabled;
     private bool _isHorrizontalMoved;
@@ -21,7 +22,7 @@ public class Education : MonoBehaviour
         _isHorrizontalMoved = false;
         _educationPanel.SetActive(true);
 
-        if (Screen.width <= 800 || Screen.height <= 800)
+        if (Device.IsMobile)
         {
             _isMobileGame = true;
             _horrizontalSlider.SetActive(true);
@@ -43,7 +44,6 @@ public class Education : MonoBehaviour
         {
             _playerMover.Moved += VerticalMove;
         }
-
     }
 
     private void HorrizontalMove()

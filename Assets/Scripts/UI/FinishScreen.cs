@@ -7,7 +7,6 @@ public class FinishScreen : MonoBehaviour
 {
     [SerializeField] private StepCounter _stepCounter;
     [SerializeField] private TextMeshProUGUI _string;
-    [SerializeField] private TextMeshProUGUI _starsPoints;
     [SerializeField] private Image[] _stars;
 
     private int _currentPointsCount;
@@ -124,14 +123,13 @@ public class FinishScreen : MonoBehaviour
     private void Awake()
     {
         _pointsLevelName = "PointsLevel" + SceneManager.GetActiveScene().buildIndex;
-        _currentPointsCount = PlayerPrefs.GetInt(_pointsLevelName);
     }
+
     private void Start()
     {
         _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
         LoadLocalization();
         SelectString();
-
     }
 
     private void LoadLocalization()
@@ -167,10 +165,11 @@ public class FinishScreen : MonoBehaviour
         }
     }
 
-    private void SendStepCountEvent()
+    public void SendStepCountEvent()
     {
         int stepCount = _stepCounter.StepCount;
         int value;
+        _currentPointsCount = PlayerPrefs.GetInt(_pointsLevelName);
 
         switch (stepCount)
         {
@@ -193,14 +192,11 @@ public class FinishScreen : MonoBehaviour
             if (value > 0 && value > _currentPointsCount)
             {
                 _currentPointsCount = value;
-                DisplayStars(_currentPointsCount);
                 PlayerPrefs.SetInt(_pointsLevelName, _currentPointsCount);
             }
         }
-        else
-        {
-            DisplayStars(_currentPointsCount);
-        }
+
+        DisplayStars(_currentPointsCount);
     }
 
     private void DisplayStars(int count)

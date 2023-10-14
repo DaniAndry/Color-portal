@@ -1,6 +1,5 @@
 using System.Collections;
 using Agava.YandexGames;
-//using Agava.VKGames;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,24 +10,12 @@ public class InitializingSDK : MonoBehaviour
 
     [SerializeField] DataLoader _dataLoader;
 
-    //private void Awake()
-    //{
-    //    PlayerPrefs.SetFloat("SoundVolume", 100);
-    //    PlayerPrefs.SetFloat("MusicVolume", 100);
-    //}
-    //private IEnumerator Start()
-    //{
-    //    yield return VKGamesSdk.Initialize();
-    //    SDKInitialized?.Invoke();
-    //    _dataLoader.LoadPlayerData();
-    //}
     private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
-        PlayerPrefs.SetFloat("SoundVolume", 100);
-        PlayerPrefs.SetFloat("MusicVolume", 100);
+        UnityEngine.PlayerPrefs.SetFloat("SoundVolume", 100);
+        UnityEngine.PlayerPrefs.SetFloat("MusicVolume", 100);
     }
-
 
     private IEnumerator Start()
     {
@@ -37,17 +24,9 @@ public class InitializingSDK : MonoBehaviour
         if (SDKInitialized != null)
         {
             SDKInitialized?.Invoke();
-            PlayerPrefs.SetString("_currentLanguage", YandexGamesSdk.Environment.i18n.lang);
+            UnityEngine.PlayerPrefs.SetString("_currentLanguage", YandexGamesSdk.Environment.i18n.lang);
             _dataLoader.LoadPlayerData();
         }
     }
 }
-
-//#if !YANDEX_GAMES && UNITY_WEBGL && !UNITY_EDITOR
-
-
-//#endif
-
-//#if VK_GAMES && UNITY_WEBGL && !UNITY_EDITOR
-//#endif
 

@@ -6,6 +6,7 @@ public class NextSceneButton : MonoBehaviour
     [SerializeField] private NeedPoints _needPoints;
     [SerializeField] private Points _points;
     [SerializeField] private GameObject _notEnoughPoint;
+    [SerializeField] private GameObject _clock;
 
     private int _currentSceneIndex;
 
@@ -13,6 +14,7 @@ public class NextSceneButton : MonoBehaviour
     {
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         _points.Calculate();
+        _clock.SetActive(false);
     }
 
     public void LoadNextScene()

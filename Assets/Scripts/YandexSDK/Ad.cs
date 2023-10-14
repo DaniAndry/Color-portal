@@ -1,5 +1,4 @@
 using Agava.YandexGames;
-//using Agava.VKGames;
 using UnityEngine;
 
 public class Ad : MonoBehaviour
@@ -17,11 +16,10 @@ public class Ad : MonoBehaviour
 
     private void Start()
     {
-        _pushCount = PlayerPrefs.GetInt("PushCount", 0);
+        _pushCount = UnityEngine.PlayerPrefs.GetInt("PushCount", 0);
 
         if (HasEnoughClicks())
         {
-      _isRun = true;
             ShowBanner();
             _isEnough = false;
         }
@@ -29,13 +27,13 @@ public class Ad : MonoBehaviour
 
     public void ShowVideo()
     {
-            VideoAd.Show(OpenAd, AddBonus, CloseAd);
-       }
+        VideoAd.Show(OpenAd, AddBonus, CloseAd);
+    }
 
     public void CheckPushCount()
     {
         _pushCount++;
-        PlayerPrefs.SetInt("PushCount", _pushCount);
+        UnityEngine.PlayerPrefs.SetInt("PushCount", _pushCount);
     }
 
     private bool HasEnoughClicks()
@@ -44,25 +42,33 @@ public class Ad : MonoBehaviour
 
         if (_pushCount >= needCount)
         {
-            PlayerPrefs.SetInt("PushCount", 0);
+            UnityEngine.PlayerPrefs.SetInt("PushCount", 0);
             _isEnough = true;
         }
         else
         {
-            _isEnough= false;
+            _isEnough = false;
         }
         return _isEnough;
     }
 
     private void ShowBanner()
     {
-        OpenAd();
-        InterstitialAd.Show(OpenAd, CloseInterstitialAd);
-        PlayerPrefs.SetInt("PushCount", 0);
+        InterstitialAd.Show(OpenInterstitialAd, CloseInterstitialAd);
+        UnityEngine.PlayerPrefs.SetInt("PushCount", 0);
+    }
+
+    private void OpenInterstitialAd()
+    {
+        _isRun = true;
+        Debug.Log("OpenAd");
+        _soundInGame.StopSounds();
+        Time.timeScale = 0;
     }
 
     private void OpenAd()
     {
+        HideButton();
         _isRun = true;
         Debug.Log("OpenAd");
         _soundInGame.StopSounds();
@@ -72,7 +78,6 @@ public class Ad : MonoBehaviour
     private void AddBonus()
     {
         _bonusSystem.AddBonus();
-        HideButton();
     }
 
     private void CloseAd()
@@ -85,13 +90,10 @@ public class Ad : MonoBehaviour
 
     private void CloseInterstitialAd(bool state)
     {
-        if (state == true)
-        {
-            Time.timeScale = 1;
-            _soundInGame.PlaySounds();
-            Debug.Log("CloseBannerAd");
-            _isRun = false;
-        }
+        Time.timeScale = 1;
+        _soundInGame.PlaySounds();
+        Debug.Log("CloseBannerAd");
+        _isRun = false;
     }
 
     private void HideButton()

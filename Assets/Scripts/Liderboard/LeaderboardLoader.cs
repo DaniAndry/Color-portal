@@ -1,4 +1,4 @@
-using Agava.YandexGames;
+п»їusing Agava.YandexGames;
 using UnityEngine;
 
 public class LeaderboardLoader : MonoBehaviour
@@ -18,9 +18,9 @@ public class LeaderboardLoader : MonoBehaviour
 
     private void Start()
     {
-        _currentScore = PlayerPrefs.GetInt("ScoreCount");
+        _currentScore = UnityEngine.PlayerPrefs.GetInt("ScoreCount");
         DisableAllRecords();
-        _currentLanguage = PlayerPrefs.GetString("_currentLanguage");
+        _currentLanguage = UnityEngine.PlayerPrefs.GetString("_currentLanguage");
         SelectLanguage(_currentLanguage);
 
         Leaderboard.SetScore("Score", _currentScore);
@@ -43,7 +43,7 @@ public class LeaderboardLoader : MonoBehaviour
         switch (language)
         {
             case "ru":
-                _anonymous = "Инкогнито";
+                _anonymous = "РРЅРєРѕРіРЅРёС‚Рѕ";
                 break;
             case "en":
                 _anonymous = "Anonymous";
@@ -52,7 +52,7 @@ public class LeaderboardLoader : MonoBehaviour
                 _anonymous = "Anonim";
                 break;
             default:
-                _anonymous = "Инкогнито";
+                _anonymous = "РРЅРєРѕРіРЅРёС‚Рѕ";
                 break;
         }
     }

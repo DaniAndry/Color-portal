@@ -16,8 +16,11 @@ public class StartWindow : MonoBehaviour
     private bool _isLeaderboardActive;
     private bool _isMenuPanelActive;
 
-    private int _currentScore;
 
+    private void Start()
+    {
+        YandexGamesSdk.GameReady();
+    }
 
     public void StartGame()
     {
@@ -40,11 +43,13 @@ public class StartWindow : MonoBehaviour
     public void CloseSettings()
     {
         _settingsPanel.SetActive(false);
-        _startPanel.SetActive(_isStartPanelActive);
+        _startPanel.SetActive(true);
     }
 
     public void OpenLeaderboard()
     {
+        RemeberElements();
+
         if (PlayerAccount.IsAuthorized)
         {
             _leaderboard.SetActive(true);
