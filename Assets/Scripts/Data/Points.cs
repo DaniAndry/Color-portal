@@ -8,7 +8,7 @@ public class Points : MonoBehaviour
     private PlayerData _playerData;
     private JsonSaver _jsonSaver;
     private int _count;
-    private int _levels = 13;
+    private int _levels = 21;
     private int _points;
 
     public int Count => _count;

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CW.Common", "CW.Common.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization", "LeanLocalization.csproj", "{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.YandexGames.Samples.Playtesting", "Agava.YandexGames.Samples.Playtesting.csproj", "{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCommon", "LeanCommon.csproj", "{E45204B2-0C3C-87B7-E167-D940B5E40329}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.Utils.Scripts", "Boxophobic.Utils.Scripts.csproj", "{48A5C4FF-781A-CD6B-0A56-CB7E0BEDA661}"
@@ -22,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.SkyboxCubemapExtended.Editor", "Boxophobic.SkyboxCubemapExtended.Editor.csproj", "{0264FDAF-27D1-73D2-DB6C-111AA0C0DB8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanLocalization.TMP", "LeanLocalization.TMP.csproj", "{0AEBE755-5022-A991-0EA8-8BA33DA83125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.YandexGames.Samples.Playtesting", "Agava.YandexGames.Samples.Playtesting.csproj", "{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agava.WebUtility.Samples.Playtesting", "Agava.WebUtility.Samples.Playtesting.csproj", "{4A28F4F0-217F-43EA-260E-3F074B753A3C}"
 EndProject
@@ -45,10 +45,6 @@ Global
 		{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{668962E2-191B-0A3D-B5F2-B286D9DF2FC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E45204B2-0C3C-87B7-E167-D940B5E40329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E45204B2-0C3C-87B7-E167-D940B5E40329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E45204B2-0C3C-87B7-E167-D940B5E40329}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,6 +73,10 @@ Global
 		{0AEBE755-5022-A991-0EA8-8BA33DA83125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AEBE755-5022-A991-0EA8-8BA33DA83125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AEBE755-5022-A991-0EA8-8BA33DA83125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF328CBB-CFE5-519F-B59E-D1CBC5B99B33}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A28F4F0-217F-43EA-260E-3F074B753A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A28F4F0-217F-43EA-260E-3F074B753A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A28F4F0-217F-43EA-260E-3F074B753A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
